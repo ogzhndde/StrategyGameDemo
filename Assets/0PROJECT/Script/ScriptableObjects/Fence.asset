@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1947113c74e989348b74376bcd5df8a3, type: 3}
+  m_Name: Fence
+  m_EditorClassIdentifier: 
+  Name: Fence
+  Description: To get past me, you have to tear me apart!
+  Health: 30
+  CellSize: 11
+  BuildingType: 3
+  UnitPrefab: {fileID: 3103852129012017636, guid: 10f2e2521733c454eab00e2b81b876e8, type: 3}
+  ProductionMenuPrefab: {fileID: 3103852129012017636, guid: 863127daec4819646893c26f2ed55f20, type: 3}

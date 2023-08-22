@@ -9,4 +9,26 @@ public enum PoolType
     None
 }
 
+public enum SoldierType
+{
+    Rookie,
+    Officer,
+    General
+}
+public enum TeamTypes
+{
+    Blue,
+    Red,
+    Green
+}
+
+public enum BuildingType
+{
+    Barrack,
+    PowerPlant,
+    House,
+    Fence
+}
+
+
 

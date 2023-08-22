@@ -1,20 +1,32 @@
 using System;
+using ArmyFactoryStatic;
+using BuildingFactoryStatic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class GameManager : SingletonManager<GameManager>
 {
-    public GameData data;
 
-    public GameObject denemePrfeab;
-    public GameObject denemePrfeab2;
+    public ScriptableObjects SO;
+
+
+    [Serializable]
+    public struct ScriptableObjects
+    {
+        public GameData data;
+        public RookieSoldierSO rookieData;
+        public OfficerSoldierSO officerData;
+        public GeneralSoldierSO GeneralData;
+        public BarrackSO BarrackData;
+        public PowerPlantsSO PowerPlantData;
+        public HouseSO HouseData;
+        public FenceSO FenceData;
+    }
 
 
     void Awake()
     {
-#if !UNITY_EDITOR
-        SaveManager.LoadData(data);
-#endif
+
     }
 
     void Start()
@@ -24,19 +36,33 @@ public class GameManager : SingletonManager<GameManager>
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            ObjectPoolManager.SpawnObjects(denemePrfeab, new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f),0), Quaternion.identity, PoolType.Gameobject);
-            Debug.Log("Yesil spawn");
+            ArmyFactory.CreateSoldier(SoldierType.Rookie, TeamTypes.Blue, transform);
         }
-        
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            ObjectPoolManager.SpawnObjects(denemePrfeab2, new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f),0), Quaternion.identity, PoolType.Gameobject);
-            Debug.Log("kirmizi spawn");
+            ArmyFactory.CreateSoldier(SoldierType.Officer, TeamTypes.Red, transform);
         }
-    }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            ArmyFactory.CreateSoldier(SoldierType.General, TeamTypes.Green, transform);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            BuildingFactory.SpawnForPlacement(BuildingType.Barrack, TeamTypes.Blue);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            BuildingFactory.SpawnForPlacement(BuildingType.PowerPlant, TeamTypes.Red);
+        }
+        if (Input.GetMouseButtonDown(2))
+        {
+            BuildingFactory.SpawnForPlacement(BuildingType.House, TeamTypes.Green);
+        }
 
+
+    }
 
 
     //########################################    EVENTS    ###################################################################

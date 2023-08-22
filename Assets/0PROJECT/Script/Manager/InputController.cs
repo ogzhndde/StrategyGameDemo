@@ -10,8 +10,6 @@ public class InputController : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     private void Awake()
     {
-        manager = FindObjectOfType<GameManager>();
-        data = manager.data;
     }
 
     private void Start()

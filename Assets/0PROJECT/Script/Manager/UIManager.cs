@@ -4,26 +4,24 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using Zenject;
 
 public class UIManager : SingletonManager<UIManager>
 {
-    public GameManager manager;
-    public GameData data;
-
-    //[Header("Definitions")]
-    public TextMeshProUGUI LevelText;
+    [Inject]
+    GameManager manager;
+    
+    GameData data;
 
 
     private void Start()
     {
-        manager = GameManager.Instance;
 
     }
 
     void Update()
     {
-
+        
     }
 
     //######################################################### BUTTONS ##############################################################
