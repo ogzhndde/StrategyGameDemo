@@ -1,15 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Linq;
+using Random = UnityEngine.Random;
 
 public class GameManager : SingletonManager<GameManager>
 {
     public GameData data;
-    
-    // [Header("Definitons")]
+
+    public GameObject denemePrfeab;
+    public GameObject denemePrfeab2;
 
 
     void Awake()
@@ -21,12 +19,22 @@ public class GameManager : SingletonManager<GameManager>
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-
+        if (Input.GetKey(KeyCode.A))
+        {
+            ObjectPoolManager.SpawnObjects(denemePrfeab, new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f),0), Quaternion.identity, PoolType.Gameobject);
+            Debug.Log("Yesil spawn");
+        }
+        
+        if (Input.GetKey(KeyCode.S))
+        {
+            ObjectPoolManager.SpawnObjects(denemePrfeab2, new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f),0), Quaternion.identity, PoolType.Gameobject);
+            Debug.Log("kirmizi spawn");
+        }
     }
 
 
