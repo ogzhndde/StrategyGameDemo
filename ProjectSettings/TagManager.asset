@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Background
+  - AvailableArea
+  - UnavailableArea
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1408612581
+    locked: 0
+  - name: AvailableArea
+    uniqueID: 3921608597
+    locked: 0
+  - name: UnavailableArea
+    uniqueID: 2848942831
+    locked: 0
+  - name: Units
+    uniqueID: 824462775
+    locked: 0
+  - name: Highlight
+    uniqueID: 348981841
     locked: 0
