@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingMenu : MonoBehaviour, IBuilding
 {
+    [Header("Definitons")]
+    [SerializeField] private TextMeshProUGUI TMP_Name;
+    [SerializeField] private TextMeshProUGUI TMP_CellSize;
+    [SerializeField] private Image IMA_Building;
+    [SerializeField] private Image IMA_TeamFlag;
+
+    #region Main Variables Of Building
     [SerializeField] private string _name;
     [SerializeField] private string _description;
     [SerializeField] private int _health;
@@ -11,6 +20,7 @@ public class BuildingMenu : MonoBehaviour, IBuilding
     [SerializeField] private BuildingType _buildingType;
     [SerializeField] private TeamTypes _teamTypes;
     [SerializeField] private List<GameObject> _buildingUnits;
+    #endregion
 
     #region Interface Variables
     public string Name => _name;
@@ -30,5 +40,19 @@ public class BuildingMenu : MonoBehaviour, IBuilding
         _buildingType = buildingType;
         _teamTypes = teamTypes;
         _buildingUnits = buildingUnits;
+    }
+
+    void Start()
+    {
+        TMP_Name.text = _name;
+        TMP_CellSize.text = _cellSize.ToString()[0] + "x" + _cellSize.ToString()[1];
+        // IMA_Building.sprite = BuildingFactoryStatic dolacak
+        IMA_TeamFlag.color = _teamTypes switch
+        {
+            TeamTypes.Red => Color.red,
+            TeamTypes.Blue => Color.blue,
+            TeamTypes.Green => Color.green,
+            _ => Color.white
+        };
     }
 }

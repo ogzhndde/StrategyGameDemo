@@ -4,6 +4,9 @@ using System.Collections.Generic;
 public enum GameEvent
 {
     OnStart,
+    OnSelectBuilding,
+    OnClickPlacedBuilding,
+    OnPlaceBuilding,
 
 
 

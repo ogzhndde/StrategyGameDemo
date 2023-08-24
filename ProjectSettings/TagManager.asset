@@ -50,6 +50,9 @@ TagManager:
   - name: UnavailableArea
     uniqueID: 2848942831
     locked: 0
+  - name: PlacedUnits
+    uniqueID: 463250499
+    locked: 0
   - name: Units
     uniqueID: 824462775
     locked: 0
