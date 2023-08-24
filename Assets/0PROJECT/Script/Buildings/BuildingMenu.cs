@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using BuildingFactoryStatic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class BuildingMenu : MonoBehaviour, IBuilding
     [SerializeField] private TextMeshProUGUI TMP_CellSize;
     [SerializeField] private Image IMA_Building;
     [SerializeField] private Image IMA_TeamFlag;
+    [SerializeField] private Button BTN_BuildingUI;
 
     #region Main Variables Of Building
     [SerializeField] private string _name;
@@ -48,6 +50,8 @@ public class BuildingMenu : MonoBehaviour, IBuilding
 
     public void SetVisualProperties()
     {
+        this.name = _name + " " + _teamTypes.ToString();
+
         TMP_Name.text = _name;
         TMP_CellSize.text = _cellSize.ToString()[0] + "x" + _cellSize.ToString()[1];
         IMA_Building.sprite = _buildingSprite;
@@ -58,6 +62,16 @@ public class BuildingMenu : MonoBehaviour, IBuilding
             TeamTypes.Green => Color.green,
             _ => Color.white
         };
+    }
+
+    void Start()
+    {
+        BTN_BuildingUI.onClick.AddListener(ButtonBuilding);
+    }
+
+    private void ButtonBuilding()
+    {
+        BuildingFactory.SpawnForPlacement(_buildingType, _teamTypes);
     }
 
 }

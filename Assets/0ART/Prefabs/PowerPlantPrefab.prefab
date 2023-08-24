@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8518194878853912282}
   - component: {fileID: 5881156119969680359}
   - component: {fileID: 493873315446642278}
+  - component: {fileID: -8996972215788010752}
   m_Layer: 0
   m_Name: PowerPlantPrefab
   m_TagString: Untagged
@@ -81,7 +82,29 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &-8996972215788010752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732289087398210367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08811a9965d536b46ab2ae03c9042aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SPR_TeamFlag: {fileID: 2533072648055607253}
+  _name: 
+  _description: 
+  _buildingSprite: {fileID: 0}
+  _health: 0
+  _cellSize: 0
+  _buildingType: 0
+  _teamTypes: 0
+  _buildingUnits: []
+  _unitSpawnPoint: {fileID: 0}
 --- !u!1 &2557666331290324665
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +263,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 95b23ab45e480f94b8e4733d572d022d, type: 3}
-  m_Color: {r: 1, g: 0.028188642, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

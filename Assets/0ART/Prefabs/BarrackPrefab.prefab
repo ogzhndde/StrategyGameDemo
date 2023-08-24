@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: a7c407cdf532c13468cd1094e5e720bc, type: 3}
-  m_Color: {r: 1, g: 0.027645167, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7395696832355300434}
   - component: {fileID: 1180118760077804577}
   - component: {fileID: 2733238955584789564}
+  - component: {fileID: 5175124666949496915}
   m_Layer: 0
   m_Name: BarrackPrefab
   m_TagString: Untagged
@@ -165,7 +166,29 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &5175124666949496915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395696832355300433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08811a9965d536b46ab2ae03c9042aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SPR_TeamFlag: {fileID: 7395696831597600846}
+  _name: 
+  _description: 
+  _buildingSprite: {fileID: 0}
+  _health: 0
+  _cellSize: 0
+  _buildingType: 0
+  _teamTypes: 0
+  _buildingUnits: []
+  _unitSpawnPoint: {fileID: 0}
 --- !u!1 &7395696833082376103
 GameObject:
   m_ObjectHideFlags: 0

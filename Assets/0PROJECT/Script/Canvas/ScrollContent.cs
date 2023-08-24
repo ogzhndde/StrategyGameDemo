@@ -25,11 +25,6 @@ public class ScrollContent : MonoBehaviour
 
     #endregion
 
-    private void Start()
-    {
-
-    }
-
     public void UpdateScrollView()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -48,24 +43,15 @@ public class ScrollContent : MonoBehaviour
         childHeight = rtChildren[0].rect.height;
 
         horizontal = !vertical;
-        if (vertical)
-            InitializeContentVertical();
-        else
-            InitializeContentHorizontal();
+
+        InitializeContentVertical();
+
+        Vector2 currentResolution = new Vector2(Screen.width, Screen.height);
+
+        
 
     }
 
-    private void InitializeContentHorizontal()
-    {
-        float originX = 0 - (width * 0.5f);
-        float posOffset = childWidth * 0.5f;
-        for (int i = 0; i < rtChildren.Length; i++)
-        {
-            Vector2 childPos = rtChildren[i].localPosition;
-            childPos.x = originX + posOffset + i * (childWidth + itemSpacing);
-            rtChildren[i].localPosition = childPos;
-        }
-    }
 
     private void InitializeContentVertical()
     {
@@ -78,4 +64,5 @@ public class ScrollContent : MonoBehaviour
             rtChildren[i].localPosition = childPos;
         }
     }
+
 }

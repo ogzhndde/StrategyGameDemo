@@ -72,13 +72,14 @@ namespace BuildingFactoryStatic
             float mousePosZ = 0;
             Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
 
-            var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.BarrackData.UnitPrefab, mousePos, Quaternion.identity);
-            var building = menuBuilding.GetComponent<Building>();
+            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.BarrackData.UnitPrefab, mousePos, Quaternion.identity);
+            var building = spawnedBuilding.GetComponent<Building>();
 
             building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes, manager.SO.BarrackData.UnitPrefabs);
+            building.SetVisualProperties();
+            building.CreateBuilding();
         }
     }
-
 
     public class CreatePowerPlants : BuildingProperties
     {
@@ -111,13 +112,14 @@ namespace BuildingFactoryStatic
             float mousePosZ = 0;
             Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
 
-            var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.PowerPlantData.UnitPrefab, mousePos, Quaternion.identity);
-            var building = menuBuilding.GetComponent<Building>();
+            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.PowerPlantData.UnitPrefab, mousePos, Quaternion.identity);
+            var building = spawnedBuilding.GetComponent<Building>();
 
             building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetVisualProperties();
+            building.CreateBuilding();
         }
     }
-
 
     public class CreateHouse : BuildingProperties
     {
@@ -150,13 +152,14 @@ namespace BuildingFactoryStatic
             float mousePosZ = 0;
             Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
 
-            var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.HouseData.UnitPrefab, mousePos, Quaternion.identity);
-            var building = menuBuilding.GetComponent<Building>();
+            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.HouseData.UnitPrefab, mousePos, Quaternion.identity);
+            var building = spawnedBuilding.GetComponent<Building>();
 
             building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetVisualProperties();
+            building.CreateBuilding();
         }
     }
-
 
     public class CreateFence : BuildingProperties
     {
@@ -189,10 +192,12 @@ namespace BuildingFactoryStatic
             float mousePosZ = 0;
             Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
 
-            var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.FenceData.UnitPrefab, mousePos, Quaternion.identity);
-            var building = menuBuilding.GetComponent<Building>();
+            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.FenceData.UnitPrefab, mousePos, Quaternion.identity);
+            var building = spawnedBuilding.GetComponent<Building>();
 
             building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetVisualProperties();
+            building.CreateBuilding();
         }
     }
 

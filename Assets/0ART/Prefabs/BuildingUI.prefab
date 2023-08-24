@@ -142,6 +142,7 @@ MonoBehaviour:
   TMP_CellSize: {fileID: 5876431607641407123}
   IMA_Building: {fileID: 5876431607329638456}
   IMA_TeamFlag: {fileID: 5876431607440096280}
+  BTN_BuildingUI: {fileID: 5876431607329638463}
   _name: 
   _description: 
   _buildingSprite: {fileID: 0}

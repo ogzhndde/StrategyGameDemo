@@ -36,8 +36,6 @@ public class PlacementManager : SingletonManager<PlacementManager>
 
     private void MouseOperations()
     {
-        if (currentTile == null) return;
-
         if (Input.GetMouseButtonDown(0))
         {
             PlaceAnyBuilding();
@@ -47,10 +45,12 @@ public class PlacementManager : SingletonManager<PlacementManager>
 
     private void PlaceAnyBuilding()
     {
-        if (SelectedBuilding == null)
-            return;
+        if (SelectedBuilding == null) return;
 
-        Instantiate(SelectedBuilding, tileBottomLeft, Quaternion.identity);
+        Building building = SelectedBuilding.GetComponent<Building>();
+        if (!building.CheckBuildingPlaceability()) return;
+
+        EventManager.Broadcast(GameEvent.OnPlaceBuilding, SelectedBuilding);
     }
 
     private GameObject GetCurrentMovingObject()
@@ -63,6 +63,13 @@ public class PlacementManager : SingletonManager<PlacementManager>
             return SelectedBuilding;
     }
 
+    private void ClearPreviousBuilding()
+    {
+        if (SelectedBuilding == null) return;
+
+        ObjectPoolManager.ReturnObjectToPool(SelectedBuilding);
+    }
+
 
 
 
@@ -71,24 +78,25 @@ public class PlacementManager : SingletonManager<PlacementManager>
 
     void OnEnable()
     {
-        EventManager.AddHandler(GameEvent.OnSelectBuilding, OnSelectBuilding);
+        EventManager.AddHandler(GameEvent.OnClickBuildingUI, OnClickBuildingUI);
         EventManager.AddHandler(GameEvent.OnPlaceBuilding, OnPlaceBuilding);
     }
 
     void OnDisable()
     {
-        EventManager.RemoveHandler(GameEvent.OnSelectBuilding, OnSelectBuilding);
+        EventManager.RemoveHandler(GameEvent.OnClickBuildingUI, OnClickBuildingUI);
         EventManager.RemoveHandler(GameEvent.OnPlaceBuilding, OnPlaceBuilding);
     }
 
-    private void OnSelectBuilding(object _selectedBuilding, object _buildingType, object _teamType)
+    private void OnClickBuildingUI(object _selectedBuilding, object _buildingType, object _teamType)
     {
         GameObject building = (GameObject)_selectedBuilding;
-        BuildingType buildingType = (BuildingType)_buildingType;
-        TeamTypes teamType = (TeamTypes)_teamType;
-    }
-    private void OnPlaceBuilding()
-    {
 
+        ClearPreviousBuilding();
+        SelectedBuilding = building;
+    }
+    private void OnPlaceBuilding(object value)
+    {
+        SelectedBuilding = null;
     }
 }

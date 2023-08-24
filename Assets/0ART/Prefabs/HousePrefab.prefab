@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 5603f5dba0b4653478622604d00dba22, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.1133728, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 6871582546476606312}
   - component: {fileID: 6688984218539064865}
   - component: {fileID: 3478082715717116420}
+  - component: {fileID: 4177962283489742698}
   m_Layer: 0
   m_Name: HousePrefab
   m_TagString: Untagged
@@ -213,7 +214,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.32789388, y: 0.33041435}
@@ -249,4 +250,26 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &4177962283489742698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044931654579374200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08811a9965d536b46ab2ae03c9042aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SPR_TeamFlag: {fileID: 8711643321940669645}
+  _name: 
+  _description: 
+  _buildingSprite: {fileID: 0}
+  _health: 0
+  _cellSize: 0
+  _buildingType: 0
+  _teamTypes: 0
+  _buildingUnits: []
+  _unitSpawnPoint: {fileID: 0}

@@ -13,7 +13,7 @@ public class ProductionMenuController : MonoBehaviour
     [SerializeField] private Transform ContentParent;
     void Start()
     {
-        // CreateProductionElements();
+        CreateProductionElements();
     }
 
 
@@ -22,9 +22,9 @@ public class ProductionMenuController : MonoBehaviour
         int BuildingTypeCount = Enum.GetNames(typeof(BuildingType)).Length;
         int TeamTypeCount = Enum.GetNames(typeof(TeamTypes)).Length;
 
-        for (int i = 0; i < TeamTypeCount; i++)
+        for (int i = TeamTypeCount - 1; i >= 0; i--)
         {
-            for (int j = 0; j < BuildingTypeCount; j++)
+            for (int j = BuildingTypeCount - 1; j >= 0 ; j--)
             {
                 BuildingType buildingType = (BuildingType)j;
                 TeamTypes teamType = (TeamTypes)i;
