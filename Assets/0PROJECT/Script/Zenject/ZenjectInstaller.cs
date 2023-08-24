@@ -10,5 +10,6 @@ public class ZenjectInstaller : MonoInstaller
         Container.Bind<GameManager>().FromComponentInHierarchy().AsSingle();
         Container.Bind<UIManager>().FromComponentInHierarchy().AsSingle();
         Container.Bind<PlacementManager>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<ScrollContent>().FromComponentInHierarchy().AsSingle();
     }
 }

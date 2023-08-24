@@ -3,13 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using BuildingFactoryStatic;
 using UnityEngine;
+using Zenject;
 
 public class ProductionMenuController : MonoBehaviour
 {
+    [Inject]
+    ScrollContent scrollContent;
+
     [SerializeField] private Transform ContentParent;
     void Start()
     {
-        CreateProductionElements();
+        // CreateProductionElements();
     }
 
 
@@ -28,5 +32,7 @@ public class ProductionMenuController : MonoBehaviour
                 BuildingFactory.SpawnForProductionMenu(buildingType, teamType, ContentParent);
             }
         }
+
+        scrollContent.UpdateScrollView();
     }
 }

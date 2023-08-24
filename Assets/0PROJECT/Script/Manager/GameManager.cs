@@ -36,31 +36,6 @@ public class GameManager : SingletonManager<GameManager>
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ArmyFactory.CreateSoldier(SoldierType.Rookie, TeamTypes.Blue, transform);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            ArmyFactory.CreateSoldier(SoldierType.Officer, TeamTypes.Red, transform);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            ArmyFactory.CreateSoldier(SoldierType.General, TeamTypes.Green, transform);
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            BuildingFactory.SpawnForPlacement(BuildingType.Barrack, TeamTypes.Blue);
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            BuildingFactory.SpawnForPlacement(BuildingType.PowerPlant, TeamTypes.Red);
-        }
-        if (Input.GetMouseButtonDown(2))
-        {
-            BuildingFactory.SpawnForPlacement(BuildingType.House, TeamTypes.Green);
-        }
-
 
     }
 

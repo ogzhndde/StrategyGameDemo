@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5876431607329638457}
   - component: {fileID: 5876431607329638456}
   - component: {fileID: 5876431607329638463}
+  - component: {fileID: 385186224100649390}
   m_Layer: 5
   m_Name: BuildingUI
   m_TagString: Untagged
@@ -40,7 +41,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 392}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5876431607329638457
@@ -125,6 +126,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &385186224100649390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5876431607329638461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52580e7ae06de5447898e695144a5321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMP_Name: {fileID: 5876431608552991749}
+  TMP_CellSize: {fileID: 5876431607641407123}
+  IMA_Building: {fileID: 5876431607329638456}
+  IMA_TeamFlag: {fileID: 5876431607440096280}
+  _name: 
+  _description: 
+  _buildingSprite: {fileID: 0}
+  _health: 0
+  _cellSize: 0
+  _buildingType: 0
+  _teamTypes: 0
+  _buildingUnits: []
 --- !u!1 &5876431607440096286
 GameObject:
   m_ObjectHideFlags: 0

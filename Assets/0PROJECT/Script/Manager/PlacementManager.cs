@@ -55,7 +55,7 @@ public class PlacementManager : SingletonManager<PlacementManager>
 
     private GameObject GetCurrentMovingObject()
     {
-        highlighter.gameObject.SetActive(SelectedBuilding ? true : false);
+        highlighter.gameObject.SetActive(SelectedBuilding == null ? true : false);
 
         if (SelectedBuilding == null)
             return highlighter;
