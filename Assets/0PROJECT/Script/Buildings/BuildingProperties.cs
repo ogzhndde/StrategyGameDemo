@@ -6,6 +6,7 @@ public abstract class BuildingProperties : IBuilding
 {
     public abstract string Name { get; }
     public abstract string Description { get; }
+    public abstract Sprite BuildingSprite { get; }
     public abstract int Health { get; }
     public abstract int CellSize { get; }
     public abstract BuildingType BuildingType { get; }

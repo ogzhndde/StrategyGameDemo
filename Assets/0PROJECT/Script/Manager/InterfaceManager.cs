@@ -16,6 +16,7 @@ public interface IBuilding
 {
     string Name { get; }
     string Description { get; }
+    Sprite BuildingSprite { get; }
     int Health { get; }
     int CellSize { get; }
     BuildingType BuildingType { get; }

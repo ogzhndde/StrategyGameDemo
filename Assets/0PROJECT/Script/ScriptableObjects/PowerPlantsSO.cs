@@ -9,6 +9,7 @@ public class PowerPlantsSO : ScriptableObject
     public string Name;
     [TextArea(4, 4)]
     public string Description;
+    public Sprite BuildingSprite;
     public int Health;
     public int CellSize;
     public BuildingType BuildingType;

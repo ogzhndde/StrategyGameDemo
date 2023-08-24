@@ -47,6 +47,7 @@ namespace BuildingFactoryStatic
         GameManager manager;
         public override string Name => manager.SO.BarrackData.Name;
         public override string Description => manager.SO.BarrackData.Description;
+        public override Sprite BuildingSprite => manager.SO.BarrackData.BuildingSprite;
         public override int Health => manager.SO.BarrackData.Health;
         public override int CellSize => manager.SO.BarrackData.CellSize;
         public override BuildingType BuildingType => manager.SO.BarrackData.BuildingType;
@@ -58,7 +59,8 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.BarrackData.ProductionMenuPrefab, ContentParent.position, Quaternion.identity);
             var building = menuBuilding.GetComponent<BuildingMenu>();
 
-            building.SetBuildingProperties(Name, Description, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetVisualProperties();
         }
 
         public override void SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
@@ -73,7 +75,7 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.BarrackData.UnitPrefab, mousePos, Quaternion.identity);
             var building = menuBuilding.GetComponent<Building>();
 
-            building.SetBuildingProperties(Name, Description, Health, CellSize, BuildingType, teamTypes, manager.SO.BarrackData.UnitPrefabs);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes, manager.SO.BarrackData.UnitPrefabs);
         }
     }
 
@@ -84,6 +86,7 @@ namespace BuildingFactoryStatic
         GameManager manager;
         public override string Name => manager.SO.PowerPlantData.Name;
         public override string Description => manager.SO.PowerPlantData.Description;
+        public override Sprite BuildingSprite => manager.SO.BarrackData.BuildingSprite;
         public override int Health => manager.SO.PowerPlantData.Health;
         public override int CellSize => manager.SO.PowerPlantData.CellSize;
         public override BuildingType BuildingType => manager.SO.PowerPlantData.BuildingType;
@@ -95,7 +98,8 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.PowerPlantData.ProductionMenuPrefab, ContentParent.position, Quaternion.identity);
             var building = menuBuilding.GetComponent<BuildingMenu>();
 
-            building.SetBuildingProperties(Name, Description, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetVisualProperties();
         }
 
         public override void SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
@@ -110,7 +114,7 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.PowerPlantData.UnitPrefab, mousePos, Quaternion.identity);
             var building = menuBuilding.GetComponent<Building>();
 
-            building.SetBuildingProperties(Name, Description, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
         }
     }
 
@@ -121,6 +125,7 @@ namespace BuildingFactoryStatic
         GameManager manager;
         public override string Name => manager.SO.HouseData.Name;
         public override string Description => manager.SO.HouseData.Description;
+        public override Sprite BuildingSprite => manager.SO.BarrackData.BuildingSprite;
         public override int Health => manager.SO.HouseData.Health;
         public override int CellSize => manager.SO.HouseData.CellSize;
         public override BuildingType BuildingType => manager.SO.HouseData.BuildingType;
@@ -132,7 +137,8 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.HouseData.ProductionMenuPrefab, ContentParent.position, Quaternion.identity);
             var building = menuBuilding.GetComponent<BuildingMenu>();
 
-            building.SetBuildingProperties(Name, Description, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetVisualProperties();
         }
 
         public override void SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
@@ -147,7 +153,7 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.HouseData.UnitPrefab, mousePos, Quaternion.identity);
             var building = menuBuilding.GetComponent<Building>();
 
-            building.SetBuildingProperties(Name, Description, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
         }
     }
 
@@ -158,6 +164,7 @@ namespace BuildingFactoryStatic
         GameManager manager;
         public override string Name => manager.SO.FenceData.Name;
         public override string Description => manager.SO.FenceData.Description;
+        public override Sprite BuildingSprite => manager.SO.FenceData.BuildingSprite;
         public override int Health => manager.SO.FenceData.Health;
         public override int CellSize => manager.SO.FenceData.CellSize;
         public override BuildingType BuildingType => manager.SO.FenceData.BuildingType;
@@ -169,7 +176,8 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.FenceData.ProductionMenuPrefab, ContentParent.position, Quaternion.identity);
             var building = menuBuilding.GetComponent<BuildingMenu>();
 
-            building.SetBuildingProperties(Name, Description, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetVisualProperties();
         }
 
         public override void SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
@@ -184,7 +192,7 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.FenceData.UnitPrefab, mousePos, Quaternion.identity);
             var building = menuBuilding.GetComponent<Building>();
 
-            building.SetBuildingProperties(Name, Description, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
         }
     }
 

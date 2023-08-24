@@ -6,6 +6,7 @@ public class Building : MonoBehaviour, IBuilding
 {
     [SerializeField] private string _name;
     [SerializeField] private string _description;
+    [SerializeField] private Sprite _buildingSprite;
     [SerializeField] private int _health;
     [SerializeField] private int _cellSize;
     [SerializeField] private BuildingType _buildingType;
@@ -16,16 +17,19 @@ public class Building : MonoBehaviour, IBuilding
     #region Interface Variables
     public string Name => _name;
     public string Description => _description;
+    public Sprite BuildingSprite => _buildingSprite;
     public int Health => _health;
     public int CellSize => _cellSize;
     public BuildingType BuildingType => _buildingType;
     public List<GameObject> BuildingUnits => _buildingUnits;
 
+
     #endregion
-    public void SetBuildingProperties(string name, string description, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<GameObject> buildingUnits = null)
+    public void SetBuildingProperties(string name, string description, Sprite buildingSprite, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<GameObject> buildingUnits = null)
     {
         _name = name;
         _description = description;
+        _buildingSprite = buildingSprite;
         _health = health;
         _cellSize = cellSize;
         _buildingType = buildingType;

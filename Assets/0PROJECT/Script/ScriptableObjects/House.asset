@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: House
   Description: Home Sweet Home...
+  BuildingSprite: {fileID: 21300000, guid: 5a77ef14157d67b438126b52bb1d322d, type: 3}
   Health: 60
   CellSize: 22
   BuildingType: 2
-  UnitPrefab: {fileID: 3103852129012017636, guid: 10f2e2521733c454eab00e2b81b876e8, type: 3}
-  ProductionMenuPrefab: {fileID: 3103852129012017636, guid: 863127daec4819646893c26f2ed55f20, type: 3}
+  UnitPrefab: {fileID: 4044931654579374200, guid: cfecb95b7b846264dadba9bf0bd1ff12, type: 3}
+  ProductionMenuPrefab: {fileID: 5876431607329638461, guid: 863127daec4819646893c26f2ed55f20, type: 3}

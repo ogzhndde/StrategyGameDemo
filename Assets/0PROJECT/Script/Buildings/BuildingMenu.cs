@@ -15,6 +15,7 @@ public class BuildingMenu : MonoBehaviour, IBuilding
     #region Main Variables Of Building
     [SerializeField] private string _name;
     [SerializeField] private string _description;
+    [SerializeField] private Sprite _buildingSprite;
     [SerializeField] private int _health;
     [SerializeField] private int _cellSize;
     [SerializeField] private BuildingType _buildingType;
@@ -25,16 +26,19 @@ public class BuildingMenu : MonoBehaviour, IBuilding
     #region Interface Variables
     public string Name => _name;
     public string Description => _description;
+    public Sprite BuildingSprite => _buildingSprite;
     public int Health => _health;
     public int CellSize => _cellSize;
     public BuildingType BuildingType => _buildingType;
     public List<GameObject> BuildingUnits => _buildingUnits;
+
     #endregion
 
-    public void SetBuildingProperties(string name, string description, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<GameObject> buildingUnits = null)
+    public void SetBuildingProperties(string name, string description, Sprite buildingSprite, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<GameObject> buildingUnits = null)
     {
         _name = name;
         _description = description;
+        _buildingSprite = buildingSprite;
         _health = health;
         _cellSize = cellSize;
         _buildingType = buildingType;
@@ -42,11 +46,11 @@ public class BuildingMenu : MonoBehaviour, IBuilding
         _buildingUnits = buildingUnits;
     }
 
-    void Start()
+    public void SetVisualProperties()
     {
         TMP_Name.text = _name;
         TMP_CellSize.text = _cellSize.ToString()[0] + "x" + _cellSize.ToString()[1];
-        // IMA_Building.sprite = BuildingFactoryStatic dolacak
+        IMA_Building.sprite = _buildingSprite;
         IMA_TeamFlag.color = _teamTypes switch
         {
             TeamTypes.Red => Color.red,
@@ -55,4 +59,5 @@ public class BuildingMenu : MonoBehaviour, IBuilding
             _ => Color.white
         };
     }
+
 }
