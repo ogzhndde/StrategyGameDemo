@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243b408f0d3da2e428d8d7f7f65027d2, type: 3}
+  m_Name: PowerPlant
+  m_EditorClassIdentifier: 
+  Name: PowerPlant
+  Description: The only place that generates the energy of the entire army...
+  BuildingSprite: {fileID: -2071836890, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
+  BuildingInformationSprite: {fileID: 655275337, guid: 2a7909b408f918b47b04369db8ec327b, type: 3}
+  Health: 50
+  CellSize: 23
+  BuildingType: 1
+  BuildingPrefab: {fileID: 1732289087398210367, guid: 8f09329c568a88d41bb05c7511ebb560, type: 3}
+  ProductionMenuPrefab: {fileID: 5876431607329638461, guid: 863127daec4819646893c26f2ed55f20, type: 3}

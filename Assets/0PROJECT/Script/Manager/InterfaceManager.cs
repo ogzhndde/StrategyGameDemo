@@ -5,6 +5,7 @@ using UnityEngine;
 public interface ISoldier
 {
     string Name { get; }
+    Sprite SoldierSprite { get; }
     int Health { get; }
     int Damage { get; }
     int CellSize { get; }
@@ -17,10 +18,11 @@ public interface IBuilding
     string Name { get; }
     string Description { get; }
     Sprite BuildingSprite { get; }
+    Sprite BuildingInformationSprite { get; }
     int Health { get; }
     int CellSize { get; }
     BuildingType BuildingType { get; }
-    List<GameObject> BuildingUnits { get; }
+    List<SoldierType> BuildingUnits { get; }
 }
 
 

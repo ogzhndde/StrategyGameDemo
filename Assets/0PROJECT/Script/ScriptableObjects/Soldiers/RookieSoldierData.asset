@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f3e3286ea42814e910909b41ffd3ad, type: 3}
+  m_Name: RookieSoldierData
+  m_EditorClassIdentifier: 
+  soldierPrefab: {fileID: 6761461194899555482, guid: 9dfe23e2913ebb94682e9a653fad7c50, type: 3}
+  soldierUIPrefab: {fileID: 8251390810710163832, guid: e51b5d5dc0d0ddc429b68acd212f22e2, type: 3}
+  Name: Rookie
+  soldierSprite: {fileID: 220827510, guid: 2a7909b408f918b47b04369db8ec327b, type: 3}
+  health: 10
+  damage: 2
+  cellSize: 11
+  soldierType: 0

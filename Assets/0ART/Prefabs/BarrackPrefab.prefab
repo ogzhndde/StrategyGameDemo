@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3414017133222475384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5143557523449034083}
+  m_Layer: 0
+  m_Name: UnitSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5143557523449034083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3414017133222475384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.787, y: -0.158, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7395696832355300434}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7395696831597600844
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +127,7 @@ GameObject:
   - component: {fileID: 1180118760077804577}
   - component: {fileID: 2733238955584789564}
   - component: {fileID: 5175124666949496915}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BarrackPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,6 +148,7 @@ Transform:
   m_Children:
   - {fileID: 7395696833082376104}
   - {fileID: 7395696831597600845}
+  - {fileID: 5143557523449034083}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -179,16 +211,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08811a9965d536b46ab2ae03c9042aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SPR_MainBuilding: {fileID: 7395696833082376105}
   SPR_TeamFlag: {fileID: 7395696831597600846}
+  CLR_BuildingColor: {r: 0, g: 0, b: 0, a: 0}
+  _canBuildingPlace: 1
+  _isPlaced: 0
   _name: 
   _description: 
   _buildingSprite: {fileID: 0}
+  _buildingInformationSprite: {fileID: 0}
   _health: 0
   _cellSize: 0
   _buildingType: 0
   _teamTypes: 0
-  _buildingUnits: []
-  _unitSpawnPoint: {fileID: 0}
+  _buildingUnits: 
+  _unitSpawnPoint: {fileID: 5143557523449034083}
 --- !u!1 &7395696833082376103
 GameObject:
   m_ObjectHideFlags: 0

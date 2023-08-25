@@ -14,7 +14,7 @@ TagManager:
   - Background
   - AvailableArea
   - UnavailableArea
-  - 
+  - Building
   - 
   - 
   - 
@@ -53,9 +53,12 @@ TagManager:
   - name: PlacedUnits
     uniqueID: 463250499
     locked: 0
-  - name: Units
-    uniqueID: 824462775
-    locked: 0
   - name: Highlight
     uniqueID: 348981841
+    locked: 0
+  - name: Soldiers
+    uniqueID: 2051185179
+    locked: 0
+  - name: Units
+    uniqueID: 824462775
     locked: 0

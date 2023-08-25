@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class Building : MonoBehaviour, IBuilding
 {
     [Header("Definitons")]
+    [SerializeField] private SpriteRenderer SPR_MainBuilding;
     [SerializeField] private SpriteRenderer SPR_TeamFlag;
-    [SerializeField] private BoxCollider2D coll;
+    private BoxCollider2D coll;
+    public Color CLR_BuildingColor;
 
     [Space(10)]
-    [Header("Definitons")]
+    [Header("Control Bools")]
     public bool _canBuildingPlace = true;
     public bool _isPlaced = false;
 
@@ -19,30 +23,34 @@ public class Building : MonoBehaviour, IBuilding
     [SerializeField] private string _name;
     [SerializeField] private string _description;
     [SerializeField] private Sprite _buildingSprite;
+    [SerializeField] private Sprite _buildingInformationSprite;
     [SerializeField] private int _health;
     [SerializeField] private int _cellSize;
     [SerializeField] private BuildingType _buildingType;
     [SerializeField] private TeamTypes _teamTypes;
-    [SerializeField] private List<GameObject> _buildingUnits;
-    [SerializeField] private Transform _unitSpawnPoint;
+    [SerializeField] private List<SoldierType> _buildingUnits;
+    public Transform _unitSpawnPoint;
     #endregion
 
     #region Interface Variables
     public string Name => _name;
     public string Description => _description;
     public Sprite BuildingSprite => _buildingSprite;
+    public Sprite BuildingInformationSprite => _buildingInformationSprite;
     public int Health => _health;
     public int CellSize => _cellSize;
     public BuildingType BuildingType => _buildingType;
-    public List<GameObject> BuildingUnits => _buildingUnits;
+    public List<SoldierType> BuildingUnits => _buildingUnits;
+
 
 
     #endregion
-    public void SetBuildingProperties(string name, string description, Sprite buildingSprite, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<GameObject> buildingUnits = null)
+    public void SetBuildingProperties(string name, string description, Sprite buildingSprite, Sprite buildingInformationSprite, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<SoldierType> buildingUnits = null)
     {
         _name = name;
         _description = description;
         _buildingSprite = buildingSprite;
+        _buildingInformationSprite = buildingInformationSprite;
         _health = health;
         _cellSize = cellSize;
         _buildingType = buildingType;
@@ -52,15 +60,17 @@ public class Building : MonoBehaviour, IBuilding
 
     public void SetVisualProperties()
     {
-        this.name = _name + " " + _teamTypes.ToString();
-
-        SPR_TeamFlag.color = _teamTypes switch
+        CLR_BuildingColor = _teamTypes switch
         {
             TeamTypes.Red => Color.red,
             TeamTypes.Blue => Color.blue,
             TeamTypes.Green => Color.green,
             _ => Color.white
         };
+        SPR_TeamFlag.color = CLR_BuildingColor;
+
+        SPR_MainBuilding.sortingLayerName = "Units";
+        SPR_TeamFlag.sortingLayerName = "Units";
     }
 
     public void CreateBuilding()
@@ -85,7 +95,6 @@ public class Building : MonoBehaviour, IBuilding
 
         if (Input.GetMouseButtonDown(0))
         {
-            EventManager.Broadcast(GameEvent.OnClickPlacedBuilding, gameObject, _buildingType, _teamTypes);
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -94,15 +103,42 @@ public class Building : MonoBehaviour, IBuilding
         }
     }
 
+    public void ClickPlacedBuilding()
+    {
+        if (!_isPlaced) return;
+        EventManager.Broadcast(GameEvent.OnClickPlacedBuilding, gameObject, _buildingType, _teamTypes);
+    }
+
     private void CheckCollision()
     {
         if (_isPlaced) return;
 
         RaycastHit2D[] AllCollisionObjects = Physics2D.BoxCastAll(coll.bounds.center, coll.bounds.size, 0f, Vector2.zero, 0f);
-        Debug.Log(AllCollisionObjects[^1].collider.gameObject.name);
-        
+
         //IF BUILDING COLLIDE WITH ANY OBJECT EXCEPT OWN COLLIDER
-        _canBuildingPlace = AllCollisionObjects.Length > 1 ? false : true;
+        switch (AllCollisionObjects.Length)
+        {
+            case > 1:
+                _canBuildingPlace = false;
+                CheckBuildingSprites(Color.red, .5f);
+                break;
+            default:
+                _canBuildingPlace = true;
+                CheckBuildingSprites(Color.white, 1f);
+                break;
+        }
+    }
+
+    private void CheckBuildingSprites(Color targetColor, float alphaValue)
+    {
+        Color newColor = targetColor;
+        newColor.a = alphaValue;
+        SPR_MainBuilding.color = newColor;
+
+        Color flagColor = CLR_BuildingColor;
+        flagColor.a = alphaValue;
+        SPR_TeamFlag.color = flagColor;
+
     }
 
     public bool CheckBuildingPlaceability()
@@ -110,8 +146,8 @@ public class Building : MonoBehaviour, IBuilding
         return _canBuildingPlace;
     }
 
-    //##########################        EVENTS      ###################################
 
+    //##########################        EVENTS      ###################################
     void OnEnable()
     {
         EventManager.AddHandler(GameEvent.OnPlaceBuilding, OnPlaceBuilding);
@@ -129,6 +165,9 @@ public class Building : MonoBehaviour, IBuilding
         if (selectedBuilding == gameObject)
         {
             _isPlaced = true;
+            SPR_MainBuilding.sortingLayerName = "PlacedUnits";
+            SPR_TeamFlag.sortingLayerName = "PlacedUnits";
+
         }
     }
 

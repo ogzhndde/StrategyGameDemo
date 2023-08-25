@@ -14,33 +14,38 @@ public class BuildingMenu : MonoBehaviour, IBuilding
     [SerializeField] private Image IMA_TeamFlag;
     [SerializeField] private Button BTN_BuildingUI;
 
+    [Space(10)]
     #region Main Variables Of Building
     [SerializeField] private string _name;
     [SerializeField] private string _description;
     [SerializeField] private Sprite _buildingSprite;
+    [SerializeField] private Sprite _buildingInformationSprite;
     [SerializeField] private int _health;
     [SerializeField] private int _cellSize;
     [SerializeField] private BuildingType _buildingType;
     [SerializeField] private TeamTypes _teamTypes;
-    [SerializeField] private List<GameObject> _buildingUnits;
+    [SerializeField] private List<SoldierType> _buildingUnits;
     #endregion
 
     #region Interface Variables
     public string Name => _name;
     public string Description => _description;
     public Sprite BuildingSprite => _buildingSprite;
+    public Sprite BuildingInformationSprite => _buildingInformationSprite;
     public int Health => _health;
     public int CellSize => _cellSize;
     public BuildingType BuildingType => _buildingType;
-    public List<GameObject> BuildingUnits => _buildingUnits;
+    public List<SoldierType> BuildingUnits => _buildingUnits;
+
 
     #endregion
 
-    public void SetBuildingProperties(string name, string description, Sprite buildingSprite, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<GameObject> buildingUnits = null)
+    public void SetBuildingProperties(string name, string description, Sprite buildingSprite, Sprite buildingInformationSprite, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<SoldierType> buildingUnits = null)
     {
         _name = name;
         _description = description;
         _buildingSprite = buildingSprite;
+        _buildingInformationSprite = buildingInformationSprite;
         _health = health;
         _cellSize = cellSize;
         _buildingType = buildingType;

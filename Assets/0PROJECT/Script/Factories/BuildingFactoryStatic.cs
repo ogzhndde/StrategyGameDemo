@@ -48,6 +48,7 @@ namespace BuildingFactoryStatic
         public override string Name => manager.SO.BarrackData.Name;
         public override string Description => manager.SO.BarrackData.Description;
         public override Sprite BuildingSprite => manager.SO.BarrackData.BuildingSprite;
+        public override Sprite BuildingInformationSprite => manager.SO.BarrackData.BuildingInformationSprite;
         public override int Health => manager.SO.BarrackData.Health;
         public override int CellSize => manager.SO.BarrackData.CellSize;
         public override BuildingType BuildingType => manager.SO.BarrackData.BuildingType;
@@ -59,7 +60,7 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.BarrackData.ProductionMenuPrefab, ContentParent);
             var building = menuBuilding.GetComponent<BuildingMenu>();
 
-            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, BuildingInformationSprite, Health, CellSize, BuildingType, teamTypes);
             building.SetVisualProperties();
         }
 
@@ -72,10 +73,10 @@ namespace BuildingFactoryStatic
             float mousePosZ = 0;
             Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
 
-            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.BarrackData.UnitPrefab, mousePos, Quaternion.identity);
+            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.BarrackData.BuildingPrefab, mousePos, Quaternion.identity);
             var building = spawnedBuilding.GetComponent<Building>();
 
-            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes, manager.SO.BarrackData.UnitPrefabs);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, BuildingInformationSprite, Health, CellSize, BuildingType, teamTypes, manager.SO.BarrackData.UnitTypes);
             building.SetVisualProperties();
             building.CreateBuilding();
         }
@@ -88,6 +89,7 @@ namespace BuildingFactoryStatic
         public override string Name => manager.SO.PowerPlantData.Name;
         public override string Description => manager.SO.PowerPlantData.Description;
         public override Sprite BuildingSprite => manager.SO.PowerPlantData.BuildingSprite;
+        public override Sprite BuildingInformationSprite => manager.SO.PowerPlantData.BuildingInformationSprite;
         public override int Health => manager.SO.PowerPlantData.Health;
         public override int CellSize => manager.SO.PowerPlantData.CellSize;
         public override BuildingType BuildingType => manager.SO.PowerPlantData.BuildingType;
@@ -99,7 +101,7 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.PowerPlantData.ProductionMenuPrefab, ContentParent);
             var building = menuBuilding.GetComponent<BuildingMenu>();
 
-            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, BuildingInformationSprite, Health, CellSize, BuildingType, teamTypes);
             building.SetVisualProperties();
         }
 
@@ -112,10 +114,10 @@ namespace BuildingFactoryStatic
             float mousePosZ = 0;
             Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
 
-            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.PowerPlantData.UnitPrefab, mousePos, Quaternion.identity);
+            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.PowerPlantData.BuildingPrefab, mousePos, Quaternion.identity);
             var building = spawnedBuilding.GetComponent<Building>();
 
-            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, BuildingInformationSprite, Health, CellSize, BuildingType, teamTypes);
             building.SetVisualProperties();
             building.CreateBuilding();
         }
@@ -128,6 +130,7 @@ namespace BuildingFactoryStatic
         public override string Name => manager.SO.HouseData.Name;
         public override string Description => manager.SO.HouseData.Description;
         public override Sprite BuildingSprite => manager.SO.HouseData.BuildingSprite;
+        public override Sprite BuildingInformationSprite => manager.SO.HouseData.BuildingInformationSprite;
         public override int Health => manager.SO.HouseData.Health;
         public override int CellSize => manager.SO.HouseData.CellSize;
         public override BuildingType BuildingType => manager.SO.HouseData.BuildingType;
@@ -139,7 +142,7 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.HouseData.ProductionMenuPrefab, ContentParent);
             var building = menuBuilding.GetComponent<BuildingMenu>();
 
-            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, BuildingInformationSprite, Health, CellSize, BuildingType, teamTypes);
             building.SetVisualProperties();
         }
 
@@ -152,10 +155,10 @@ namespace BuildingFactoryStatic
             float mousePosZ = 0;
             Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
 
-            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.HouseData.UnitPrefab, mousePos, Quaternion.identity);
+            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.HouseData.BuildingPrefab, mousePos, Quaternion.identity);
             var building = spawnedBuilding.GetComponent<Building>();
 
-            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, BuildingInformationSprite, Health, CellSize, BuildingType, teamTypes);
             building.SetVisualProperties();
             building.CreateBuilding();
         }
@@ -168,6 +171,7 @@ namespace BuildingFactoryStatic
         public override string Name => manager.SO.FenceData.Name;
         public override string Description => manager.SO.FenceData.Description;
         public override Sprite BuildingSprite => manager.SO.FenceData.BuildingSprite;
+        public override Sprite BuildingInformationSprite => manager.SO.FenceData.BuildingInformationSprite;
         public override int Health => manager.SO.FenceData.Health;
         public override int CellSize => manager.SO.FenceData.CellSize;
         public override BuildingType BuildingType => manager.SO.FenceData.BuildingType;
@@ -179,7 +183,7 @@ namespace BuildingFactoryStatic
             var menuBuilding = ObjectPoolManager.SpawnObjects(manager.SO.FenceData.ProductionMenuPrefab, ContentParent);
             var building = menuBuilding.GetComponent<BuildingMenu>();
 
-            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, BuildingInformationSprite, Health, CellSize, BuildingType, teamTypes);
             building.SetVisualProperties();
         }
 
@@ -192,10 +196,10 @@ namespace BuildingFactoryStatic
             float mousePosZ = 0;
             Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
 
-            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.FenceData.UnitPrefab, mousePos, Quaternion.identity);
+            var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.FenceData.BuildingPrefab, mousePos, Quaternion.identity);
             var building = spawnedBuilding.GetComponent<Building>();
 
-            building.SetBuildingProperties(Name, Description, BuildingSprite, Health, CellSize, BuildingType, teamTypes);
+            building.SetBuildingProperties(Name, Description, BuildingSprite, BuildingInformationSprite, Health, CellSize, BuildingType, teamTypes);
             building.SetVisualProperties();
             building.CreateBuilding();
         }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73035f46bda41a46a95a0fd747e08af, type: 3}
+  m_Name: OfficerSoldierData
+  m_EditorClassIdentifier: 
+  soldierPrefab: {fileID: 4908351666358052834, guid: cf1be77948b8d044da3b32a4ab8b7111, type: 3}
+  soldierUIPrefab: {fileID: 8251390810710163832, guid: e51b5d5dc0d0ddc429b68acd212f22e2, type: 3}
+  Name: Officer
+  soldierSprite: {fileID: 1501530394, guid: 2a7909b408f918b47b04369db8ec327b, type: 3}
+  health: 10
+  damage: 5
+  cellSize: 11
+  soldierType: 1

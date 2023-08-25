@@ -65,14 +65,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.91201234, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f289c6531d039740ad7db9c5fc6bb21, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -146,11 +146,12 @@ MonoBehaviour:
   _name: 
   _description: 
   _buildingSprite: {fileID: 0}
+  _buildingInformationSprite: {fileID: 0}
   _health: 0
   _cellSize: 0
   _buildingType: 0
   _teamTypes: 0
-  _buildingUnits: []
+  _buildingUnits: 
 --- !u!1 &5876431607440096286
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
+  m_Sprite: {fileID: -542416080, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -93,6 +93,7 @@ public class PlacementManager : SingletonManager<PlacementManager>
         GameObject building = (GameObject)_selectedBuilding;
 
         ClearPreviousBuilding();
+
         SelectedBuilding = building;
     }
     private void OnPlaceBuilding(object value)

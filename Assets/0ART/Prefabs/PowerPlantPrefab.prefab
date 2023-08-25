@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5881156119969680359}
   - component: {fileID: 493873315446642278}
   - component: {fileID: -8996972215788010752}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PowerPlantPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08811a9965d536b46ab2ae03c9042aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SPR_MainBuilding: {fileID: 5378400888358406263}
   SPR_TeamFlag: {fileID: 2533072648055607253}
+  _canBuildingPlace: 1
+  _isPlaced: 0
   _name: 
   _description: 
   _buildingSprite: {fileID: 0}
@@ -103,7 +106,7 @@ MonoBehaviour:
   _cellSize: 0
   _buildingType: 0
   _teamTypes: 0
-  _buildingUnits: []
+  _buildingUnits: 
   _unitSpawnPoint: {fileID: 0}
 --- !u!1 &2557666331290324665
 GameObject:
