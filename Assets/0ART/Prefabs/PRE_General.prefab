@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4499966143695808460}
   - component: {fileID: 4499966143695808463}
   - component: {fileID: 4499966143695808457}
+  - component: {fileID: 1867733021077202005}
   m_Layer: 0
   m_Name: General
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.057, y: 0.004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4499966143775240769}
   m_RootOrder: 0
@@ -105,6 +106,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1867733021077202005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499966143695808456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4587b860902c264f82ac39359955e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldierStateEnum: 0
+  _currentTarget: {fileID: 0}
+  defaultAttackCooldown: 1
 --- !u!1 &4499966143775240768
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,10 +131,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4499966143775240769}
   - component: {fileID: 1139247732447858117}
+  - component: {fileID: 1206656462647577771}
   - component: {fileID: 4727406304733063375}
-  - component: {fileID: 5679788210560345389}
+  - component: {fileID: 1580562413}
+  - component: {fileID: 1580562405}
   - component: {fileID: 664383107408462643}
-  m_Layer: 0
+  - component: {fileID: 5480946888338909656}
+  m_Layer: 10
   m_Name: PRE_General
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,15 +173,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73168b5d7851f745a3283946b0071de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatController: {fileID: 4727406304733063375}
   _name: 
   _soldierSprite: {fileID: 0}
   _health: 0
   _damage: 0
   _cellSize: 0
   _soldierType: 0
-  _teamTypes: 0
   _soldierColor: {r: 0, g: 0, b: 0, a: 0}
+  _teamTypes: 0
+--- !u!114 &1206656462647577771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499966143775240768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa265a7d791f064db4e0b538bde0a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamTypes: 0
+  SearchingRadius: 0.25
+  TargetDestination: {fileID: 0}
+  EnemiesTargetAround: []
+  CollidersAround: []
+  TargetLayers:
+    serializedVersion: 2
+    m_Bits: 1536
+  _isAlreadyFighting: 0
 --- !u!114 &4727406304733063375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,22 +216,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1708853841363557703}
   CurrentHealth: 0
---- !u!70 &5679788210560345389
-CapsuleCollider2D:
+--- !u!114 &1580562413
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4499966143775240768}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.026228368}
-  m_Size: {x: 0.23769096, y: 0.43887246}
-  m_Direction: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+  radius: 0.2
+  height: 0.01
+  canMove: 1
+  maxSpeed: 1
+  gravity: {x: NaN, y: NaN, z: NaN}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  repathRateCompatibility: NaN
+  canSearchCompability: 0
+  orientation: 1
+  enableRotation: 0
+  autoRepath:
+    mode: 2
+    interval: 0.2
+    sensitivity: 10
+    maximumInterval: 0.5
+    visualizeSensitivity: 0
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 360
+  slowdownDistance: 0.4
+  pickNextWaypointDist: 0.3
+  endReachedDistance: 0.05
+  alwaysDrawGizmos: 0
+  slowWhenNotFacingTarget: 1
+  whenCloseToDestination: 0
+  constrainInsideGraph: 0
+--- !u!114 &1580562405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499966143775240768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!50 &664383107408462643
 Rigidbody2D:
   serializedVersion: 4
@@ -206,7 +299,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -214,6 +307,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &5480946888338909656
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4499966143775240768}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0339638}
+  m_Size: {x: 0.32901108, y: 0.43736678}
+  m_Direction: 0
 --- !u!1001 &2137361801491363591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221,6 +330,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4499966143775240769}
     m_Modifications:
+    - target: {fileID: 146333554709284063, guid: fcccc8d3ae3bcb646971e1b3cb68d506, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2222732849691326004, guid: fcccc8d3ae3bcb646971e1b3cb68d506, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

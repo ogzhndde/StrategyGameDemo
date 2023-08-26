@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CombatController))]
+[RequireComponent(typeof(SoldierAI))]
+[RequireComponent(typeof(DamageController))]
 public class Soldier : MonoBehaviour, ISoldier
 {
     [Header("Definitions")]
-    [SerializeField] private CombatController combatController;
+    private SoldierAI soldierAI;
+    private DamageController damageController;
 
 
     [Space(15)]
@@ -18,8 +21,8 @@ public class Soldier : MonoBehaviour, ISoldier
     [SerializeField] private int _damage;
     [SerializeField] private int _cellSize;
     [SerializeField] private SoldierType _soldierType;
-    [SerializeField] private TeamTypes _teamTypes;
     [SerializeField] private Color _soldierColor;
+    public TeamTypes _teamTypes;
     #endregion
 
     #region Interface Variables
@@ -49,16 +52,19 @@ public class Soldier : MonoBehaviour, ISoldier
             _ => Color.white,
         };
 
-        SetCombatValues();
+        SetValuesOfSubScripts();
     }
 
-    private void SetCombatValues()
+    void Awake()
     {
-        combatController.SetHealthBarValues(_health, _soldierColor);
+        soldierAI = GetComponent<SoldierAI>();
+        damageController = GetComponent<DamageController>();
+    }
+    private void SetValuesOfSubScripts()
+    {
+        damageController.SetHealthBarValues(_health, _soldierColor);
+        soldierAI.teamTypes = _teamTypes;
     }
 
-
-
-
-
+   
 }

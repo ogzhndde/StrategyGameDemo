@@ -11,6 +11,7 @@ public class PlacementManager : SingletonManager<PlacementManager>
     [SerializeField] private GameObject SelectedBuilding;
 
     [SerializeField] private GameObject highlighter;
+    public Vector3 cellWorldPos;
     private Vector3 tileBottomLeft;
 
     void Update()
@@ -23,7 +24,7 @@ public class PlacementManager : SingletonManager<PlacementManager>
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int cellPos = tilemap.WorldToCell(mouseWorldPos);
 
-        Vector3 cellWorldPos = tilemap.GetCellCenterWorld(cellPos);
+        cellWorldPos = tilemap.GetCellCenterWorld(cellPos);
         tileBottomLeft = cellWorldPos - new Vector3(tilemap.cellSize.x / 2f, tilemap.cellSize.y / 2f, 0f);
 
         currentTile = tilemap.GetTile(cellPos);

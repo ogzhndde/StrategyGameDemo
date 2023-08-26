@@ -6,6 +6,8 @@ public enum GameEvent
     OnStart,
     OnClickBuildingUI,
     OnClickPlacedBuilding,
+    OnClickToAttack,
+    OnClickToMove,
     OnPlaceBuilding,
 
 

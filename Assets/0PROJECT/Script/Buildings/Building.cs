@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(CombatController))]
+[RequireComponent(typeof(DamageController))]
 public class Building : MonoBehaviour, IBuilding
 {
 
@@ -13,7 +13,7 @@ public class Building : MonoBehaviour, IBuilding
     [Header("Definitons")]
     [SerializeField] private SpriteRenderer SPR_MainBuilding;
     [SerializeField] private SpriteRenderer SPR_TeamFlag;
-    [SerializeField] private CombatController combatController;
+    private DamageController damageController;
     private BoxCollider2D coll;
     public Color CLR_BuildingColor;
 
@@ -32,8 +32,8 @@ public class Building : MonoBehaviour, IBuilding
     [SerializeField] private int _health;
     [SerializeField] private int _cellSize;
     [SerializeField] private BuildingType _buildingType;
-    [SerializeField] private TeamTypes _teamTypes;
     [SerializeField] private List<SoldierType> _buildingUnits;
+    public TeamTypes _teamTypes;
     public Transform _unitSpawnPoint;
     #endregion
 
@@ -77,7 +77,7 @@ public class Building : MonoBehaviour, IBuilding
         SPR_MainBuilding.sortingLayerName = "Units";
         SPR_TeamFlag.sortingLayerName = "Units";
 
-        SetCombatValues();
+        SetValuesOfSubScripts();
     }
 
     public void CreateBuilding()
@@ -85,9 +85,10 @@ public class Building : MonoBehaviour, IBuilding
         EventManager.Broadcast(GameEvent.OnClickBuildingUI, gameObject, _buildingType, _teamTypes);
     }
 
-    void Start()
+    void Awake()
     {
         coll = GetComponent<BoxCollider2D>();
+        damageController = GetComponent<DamageController>();
     }
 
     void FixedUpdate()
@@ -153,9 +154,9 @@ public class Building : MonoBehaviour, IBuilding
         return _canBuildingPlace;
     }
 
-    private void SetCombatValues()
+    private void SetValuesOfSubScripts()
     {
-        combatController.SetHealthBarValues(_health, CLR_BuildingColor);
+        damageController.SetHealthBarValues(_health, CLR_BuildingColor);
     }
 
 

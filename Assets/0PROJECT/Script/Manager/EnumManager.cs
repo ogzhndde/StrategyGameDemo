@@ -30,5 +30,13 @@ public enum BuildingType
     Fence
 }
 
+public enum SoldierState
+{
+    Idle,
+    Run,
+    Fight,
+    Dead
+}
+
 
 

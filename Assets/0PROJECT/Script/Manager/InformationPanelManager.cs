@@ -45,7 +45,9 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
 
     private void CheckClickOnBuilding()
     {
-        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
+        if (IsPointerOverUI()) return;
+        
+        if (Input.GetMouseButtonDown(0))
         {
             Vector3 clickPosition = Input.mousePosition;
             clickPosition.z = -Camera.main.transform.position.z; // Uygun derinlik ayarı
