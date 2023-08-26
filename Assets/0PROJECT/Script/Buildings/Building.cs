@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(CombatController))]
 public class Building : MonoBehaviour, IBuilding
 {
+
+    [Space(15)]
     [Header("Definitons")]
     [SerializeField] private SpriteRenderer SPR_MainBuilding;
     [SerializeField] private SpriteRenderer SPR_TeamFlag;
+    [SerializeField] private CombatController combatController;
     private BoxCollider2D coll;
     public Color CLR_BuildingColor;
+
 
     [Space(10)]
     [Header("Control Bools")]
@@ -71,6 +76,8 @@ public class Building : MonoBehaviour, IBuilding
 
         SPR_MainBuilding.sortingLayerName = "Units";
         SPR_TeamFlag.sortingLayerName = "Units";
+
+        SetCombatValues();
     }
 
     public void CreateBuilding()
@@ -124,7 +131,7 @@ public class Building : MonoBehaviour, IBuilding
                 break;
             default:
                 _canBuildingPlace = true;
-                CheckBuildingSprites(Color.white, 1f);
+                CheckBuildingSprites(Color.white, 0.5f);
                 break;
         }
     }
@@ -145,6 +152,12 @@ public class Building : MonoBehaviour, IBuilding
     {
         return _canBuildingPlace;
     }
+
+    private void SetCombatValues()
+    {
+        combatController.SetHealthBarValues(_health, CLR_BuildingColor);
+    }
+
 
 
     //##########################        EVENTS      ###################################
@@ -168,8 +181,9 @@ public class Building : MonoBehaviour, IBuilding
             SPR_MainBuilding.sortingLayerName = "PlacedUnits";
             SPR_TeamFlag.sortingLayerName = "PlacedUnits";
 
+            CheckBuildingSprites(Color.white, 1f);
+
         }
     }
-
 
 }

@@ -25,4 +25,10 @@ public interface IBuilding
     List<SoldierType> BuildingUnits { get; }
 }
 
+public interface IHittable
+{
+    void SetHealthBarValues(int health, Color teamColor);
+    void TakeDamage(int damage);
+}
+
 
