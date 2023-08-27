@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace ParticleFactoryStatic
 {
@@ -36,6 +37,8 @@ namespace ParticleFactoryStatic
         {
             manager = GameManager.Instance;
             var spawnedParticle = ObjectPoolManager.SpawnObjects(manager.SO.ParticleData.ExplodeParticle, spawnPosition, Quaternion.identity);
+
+            EventManager.Broadcast(GameEvent.OnPlaySound, "SoundBuildingCollapse");
         }
     }
 
@@ -47,6 +50,8 @@ namespace ParticleFactoryStatic
         {
             manager = GameManager.Instance;
             var spawnedParticle = ObjectPoolManager.SpawnObjects(manager.SO.ParticleData.HitParticle, spawnPosition, Quaternion.identity);
+
+            EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSwordHit" + Random.Range(1, 4));
         }
     }
 }

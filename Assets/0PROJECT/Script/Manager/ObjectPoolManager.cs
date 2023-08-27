@@ -50,7 +50,6 @@ public class ObjectPoolManager : MonoBehaviour
 
         if (spawnableObj == null)
         {
-            Debug.Log("yeni spawnladim");
             //SET PARENT
             GameObject parentObject = SetParentObjects(poolType);
 
@@ -64,7 +63,6 @@ public class ObjectPoolManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("kapaliyi actim");
             //IF THERE IS AN INACTIVE OBJECT, REACTIVE IT
             spawnableObj.transform.position = spawnPosition;
             spawnableObj.transform.rotation = spawnRotation;

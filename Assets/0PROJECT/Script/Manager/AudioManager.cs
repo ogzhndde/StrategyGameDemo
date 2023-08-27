@@ -7,13 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource audioPlay;
     public AudioSource soundPlay;
-    float timer;
 
-    private void Awake()
-    {
-        // DontDestroyOnLoad(this.gameObject);
-    
-    }
 
    private void OnEnable()
     {

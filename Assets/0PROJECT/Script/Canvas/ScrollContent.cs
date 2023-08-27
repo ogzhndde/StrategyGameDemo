@@ -25,8 +25,14 @@ public class ScrollContent : MonoBehaviour
 
     #endregion
 
+    void Start()
+    {
+        InvokeRepeating(nameof(CheckItemSpacing), 0, 0.5f);
+    }
     public void UpdateScrollView()
     {
+        CheckItemSpacing();
+
         rectTransform = GetComponent<RectTransform>();
         rtChildren = new RectTransform[rectTransform.childCount];
 
@@ -47,11 +53,7 @@ public class ScrollContent : MonoBehaviour
         InitializeContentVertical();
 
         Vector2 currentResolution = new Vector2(Screen.width, Screen.height);
-
-        
-
     }
-
 
     private void InitializeContentVertical()
     {
@@ -62,6 +64,20 @@ public class ScrollContent : MonoBehaviour
             Vector2 childPos = rtChildren[i].localPosition;
             childPos.y = originY + posOffset + i * (childHeight + itemSpacing);
             rtChildren[i].localPosition = childPos;
+        }
+    }
+
+    private void CheckItemSpacing()
+    {
+        float itemSpacing1920 = 25f;
+        float itemSpacing2560 = -25f;
+        float itemSpacing3840 = -125f;
+
+        float normalizedWidth = Mathf.InverseLerp(1920f, 3840f, Screen.width);
+        itemSpacing = Mathf.Lerp(itemSpacing1920, itemSpacing2560, normalizedWidth);
+        if (Screen.width >= 2560)
+        {
+            itemSpacing = Mathf.Lerp(itemSpacing2560, itemSpacing3840, normalizedWidth);
         }
     }
 

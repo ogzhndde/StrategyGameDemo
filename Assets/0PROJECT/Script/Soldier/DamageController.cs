@@ -49,7 +49,7 @@ public class DamageController : MonoBehaviour, IHittable
         CurrentHealth -= damage;
         if (CurrentHealth <= 0)
         {
-            SpawnExplodeParticle();
+            DeathProcess();
             ObjectPoolManager.ReturnObjectToPool(gameObject);
             return;
         }
@@ -71,11 +71,18 @@ public class DamageController : MonoBehaviour, IHittable
         }
     }
 
-    void SpawnExplodeParticle()
+    void DeathProcess()
     {
-        if (unitType != UnitType.Building)
-            return;
+        switch (unitType)
+        {
+            case UnitType.Soldier:
+                EventManager.Broadcast(GameEvent.OnPlaySound, "SoundDeath");
+                break;
 
-        ParticleFactory.SpawnParticle(ParticleType.ExplodeParticle, transform.GetChild(0).transform.position);
+            case UnitType.Building:
+                ParticleFactory.SpawnParticle(ParticleType.ExplodeParticle, transform.GetChild(0).transform.position);
+                break;
+        }
+
     }
 }

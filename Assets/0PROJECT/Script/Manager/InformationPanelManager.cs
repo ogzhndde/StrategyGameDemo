@@ -18,6 +18,7 @@ public struct PanelVariables
     public TextMeshProUGUI TMP_Description;
     public GameObject OBJ_UnitPanel;
     public Transform ContentParent;
+    public List<GameObject> InfoPanelSubObjects;
 
 }
 
@@ -46,7 +47,7 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
     private void CheckClickOnBuilding()
     {
         if (IsPointerOverUI()) return;
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 clickPosition = Input.mousePosition;
@@ -78,6 +79,7 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
     private void UpdateInformationPanel(ref Building selectedBuilding, BuildingType buildingType, TeamTypes teamType)
     {
         AnimationControl(true);
+        SubObjectsActivationCheck(true);
 
         panelVariables.IMA_Building.sprite = selectedBuilding.BuildingInformationSprite;
         panelVariables.IMA_Flag.color = selectedBuilding.CLR_BuildingColor;
@@ -100,17 +102,20 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
         AnimationControl(false);
         CurrentBuilding = null;
 
-        // panelVariables.IMA_Building.sprite = null;
-        // panelVariables.IMA_Flag.color = Color.white;
-        // panelVariables.TMP_BuildingName.text = string.Empty;
-        // panelVariables.TMP_Healt.text = string.Empty;
-        // panelVariables.TMP_Description.text = string.Empty;
-        // panelVariables.OBJ_UnitPanel.SetActive(false);
-
         int childCount = panelVariables.ContentParent.childCount;
         for (int i = 0; i < childCount; i++)
         {
             ObjectPoolManager.ReturnObjectToPool(panelVariables.ContentParent.GetChild(i).gameObject);
+        }
+
+        SubObjectsActivationCheck(false);
+    }
+
+    void SubObjectsActivationCheck(bool state)
+    {
+        foreach (var item in panelVariables.InfoPanelSubObjects)
+        {
+            item.SetActive(state);
         }
     }
 

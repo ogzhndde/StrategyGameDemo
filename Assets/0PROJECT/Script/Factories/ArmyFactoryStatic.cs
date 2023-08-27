@@ -74,6 +74,7 @@ namespace ArmyFactoryStatic
             var soldier = spawnedSoldier.GetComponent<Soldier>();
 
             soldier.SetSoldierProperties(Name, SoldierSprite, Health, Damage, CellSize, SoldierType, teamTypes);
+            EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSpawnRookie");
         }
 
 
@@ -109,6 +110,7 @@ namespace ArmyFactoryStatic
             var soldier = spawnedSoldier.GetComponent<Soldier>();
 
             soldier.SetSoldierProperties(Name, SoldierSprite, Health, Damage, CellSize, SoldierType, teamTypes);
+            EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSpawnOfficer");
         }
 
     }
@@ -142,6 +144,7 @@ namespace ArmyFactoryStatic
             var soldier = spawnedSoldier.GetComponent<Soldier>();
 
             soldier.SetSoldierProperties(Name, SoldierSprite, Health, Damage, CellSize, SoldierType, teamTypes);
+            EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSpawnGeneral");
         }
     }
 

@@ -50,5 +50,12 @@ public enum ParticleType
     HitParticle
 }
 
+public enum ScriptType
+{
+    None,
+    Building,
+    Soldier
+}
+
 
 

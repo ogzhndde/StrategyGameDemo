@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
+using Random = UnityEngine.Random;
 
 public class CombatManager : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class CombatManager : MonoBehaviour
                 if (hit.collider.GetComponent<Soldier>())
                 {
                     SelectedSoldier = hit.collider.gameObject;
+                    EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSelectSoldier");
                 }
                 else
                 {
@@ -55,10 +57,7 @@ public class CombatManager : MonoBehaviour
         {
             if (SelectedSoldier == null) return;
 
-            // Vector3 clickPosition = Input.mousePosition;
-            // clickPosition.z = -Camera.main.transform.position.z; // Uygun derinlik ayarı
             Vector2 worldClickPosition = GetCurrentTilePosition();
-
             RaycastHit2D hit = Physics2D.Raycast(worldClickPosition, Vector2.zero, Mathf.Infinity, layerMask);
 
             if (hit.collider != null)
@@ -97,6 +96,7 @@ public class CombatManager : MonoBehaviour
     {
         EmptyAreaMovemenPrefab.transform.position = GetCurrentTilePosition();
         EventManager.Broadcast(GameEvent.OnClickToMove, SelectedSoldier, EmptyAreaMovemenPrefab);
+        EventManager.Broadcast(GameEvent.OnPlaySound, "SoundJustMove");
     }
 
     private Vector2 GetMouseClickPosition()

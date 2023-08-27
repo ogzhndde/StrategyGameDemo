@@ -101,6 +101,8 @@ public class Building : MonoBehaviour, IBuilding
     {
         if (!_isPlaced) return;
         EventManager.Broadcast(GameEvent.OnClickPlacedBuilding, gameObject, _buildingType, _teamTypes);
+        EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSelectBuilding");
+
     }
 
     private void CheckCollision()

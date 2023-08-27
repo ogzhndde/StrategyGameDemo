@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1290524935845601539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290524935845601538}
+  - component: {fileID: 1290524935845601541}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1290524935845601538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290524935845601539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1290524935845601541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290524935845601539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8502fab1dbd6a504db201aee8b6d17a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SO:
+    rookieData: {fileID: 11400000, guid: 189b479ffaefbf54f90fe6a60a15053a, type: 2}
+    officerData: {fileID: 11400000, guid: 3ea580daca25151409bbe3aff5dbcc7c, type: 2}
+    GeneralData: {fileID: 11400000, guid: 434c9a6180b49cf4991af04b4eac4570, type: 2}
+    BarrackData: {fileID: 11400000, guid: 3fe229ed6a24fdc49b1a617904d842f3, type: 2}
+    PowerPlantData: {fileID: 11400000, guid: f057ba5e196c1ce418d21ada81eb4667, type: 2}
+    HouseData: {fileID: 11400000, guid: 98ba3fca380afa24786539b8e0390448, type: 2}
+    FenceData: {fileID: 11400000, guid: a3bfe952eef376c4483f79b36316ef99, type: 2}
+    ParticleData: {fileID: 11400000, guid: 59697fecaf97d9642ac60f71fff7c25e, type: 2}
+    CursorData: {fileID: 11400000, guid: 16cb3dcd1eede98459ced3090a2debb2, type: 2}

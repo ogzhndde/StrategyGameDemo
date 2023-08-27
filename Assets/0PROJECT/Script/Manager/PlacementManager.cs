@@ -52,6 +52,8 @@ public class PlacementManager : SingletonManager<PlacementManager>
         if (!building.CheckBuildingPlaceability()) return;
 
         EventManager.Broadcast(GameEvent.OnPlaceBuilding, SelectedBuilding);
+        EventManager.Broadcast(GameEvent.OnPlaySound, "SoundPlacement");
+
     }
 
     private GameObject GetCurrentMovingObject()

@@ -5,6 +5,7 @@ using UnityEngine;
 using Pathfinding;
 using System.Linq;
 using System;
+using Random = UnityEngine.Random;
 
 public class SoldierAI : MonoBehaviour
 {
@@ -160,6 +161,7 @@ public class SoldierAI : MonoBehaviour
         GameObject targetUnit = (GameObject)selectedTarget;
 
         SetNewDestination(targetUnit.transform);
+        EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSoldierCharge" + Random.Range(1, 3));
     }
 
     private void OnClickToMove(object selectedSoldier, object selectedLocation)

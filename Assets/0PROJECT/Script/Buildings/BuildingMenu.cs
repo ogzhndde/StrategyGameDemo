@@ -77,6 +77,9 @@ public class BuildingMenu : MonoBehaviour, IBuilding
     private void ButtonBuilding()
     {
         BuildingFactory.SpawnForPlacement(_buildingType, _teamTypes);
+
+        EventManager.Broadcast(GameEvent.OnPlaySound, "SoundClick");
+
     }
 
 }

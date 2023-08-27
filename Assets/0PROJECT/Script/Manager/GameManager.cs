@@ -21,6 +21,7 @@ public class GameManager : SingletonManager<GameManager>
         public HouseSO HouseData;
         public FenceSO FenceData;
         public ParticleSO ParticleData;
+        public CursorSO CursorData;
     }
 
     void Start()
