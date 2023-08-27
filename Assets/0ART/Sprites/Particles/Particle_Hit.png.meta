@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6bbf25edfa41452499448cb77f1a07da
+guid: cc029d13c5c819444af10399fdd0e75a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,7 +71,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -140,160 +140,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MenuUI_PowerPlantButton
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 100
-        width: 250
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5198fa443b9cf4a47a8bbae31eb68cde
-      internalID: 662294296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_FenceButton
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 100
-        width: 250
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d046c77db7196941b9a7550599a86da
-      internalID: -172141113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_BarrackButton
+      name: Particle_Hit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9faee1cc19dc43e418cd406e25438134
-      internalID: -1849025613
+      spriteID: 9b39543605170e9498aa44423b942adc
+      internalID: -2029752981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MenuUI_HouseButton
+      name: Particle_Hit_1
       rect:
         serializedVersion: 2
-        x: 250
+        x: 64
         y: 0
-        width: 250
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e02d468be270260449a20d440b521e94
-      internalID: 636304524
+      spriteID: 24fd1d0bc7f848d49aac28b36d393c87
+      internalID: 766045133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MenuUI_Rookie
+      name: Particle_Hit_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 200
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1edf677e02b65541a01c6f8c1888f8c
-      internalID: -1993856253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_Officer
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 200
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de2339309b2a0c645a142d38d2a52003
-      internalID: -5699460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_General
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 200
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c087395125ff1cd408b9e874d274a86f
-      internalID: -200684717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_Fence
-      rect:
-        serializedVersion: 2
-        x: 630
+        x: 128
         y: 0
-        width: 130
-        height: 130
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fd09dc9eaf0e354698994963b4ab8fe
-      internalID: -417634510
+      spriteID: 7bbcfe65c1440194883de37074080da3
+      internalID: -1398534080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InfoUI_House
+      name: Particle_Hit_3
       rect:
         serializedVersion: 2
-        x: 500
+        x: 192
         y: 0
-        width: 130
-        height: 130
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,71 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a24a2d5d1a96d9b4ca804163024ba506
-      internalID: 552197807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_Barrack
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 130
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f82bd15b7e6cbf845bb167f4f5832aef
-      internalID: -1899843278
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_PowerPlant
-      rect:
-        serializedVersion: 2
-        x: 630
-        y: 130
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 238ae91475ae34148aa8ede84ed59a3a
-      internalID: 233839801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_Flag
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 255
-        width: 50
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe66fbf63c2ebfa4f9f6edfdafc9b61c
-      internalID: 1883393289
+      spriteID: bc22e88095af52d47aa574ca880b6008
+      internalID: -814088979
       vertices: []
       indices: 
       edges: []
@@ -402,18 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      InfoUI_PowerPlant: 233839801
-      MenuUI_Officer: -5699460
-      MenuUI_BarrackButton: -1849025613
-      InfoUI_Fence: -417634510
-      MenuUI_Flag: 1883393289
-      InfoUI_Barrack: -1899843278
-      MenuUI_General: -200684717
-      MenuUI_PowerPlantButton: 662294296
-      InfoUI_House: 552197807
-      MenuUI_HouseButton: 636304524
-      MenuUI_FenceButton: -172141113
-      MenuUI_Rookie: -1993856253
+      Particle_Hit_0: -2029752981
+      Particle_Hit_1: 766045133
+      Particle_Hit_2: -1398534080
+      Particle_Hit_3: -814088979
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

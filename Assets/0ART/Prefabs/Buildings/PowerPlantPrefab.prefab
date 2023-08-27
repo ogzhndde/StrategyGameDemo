@@ -102,6 +102,9 @@ MonoBehaviour:
   CLR_BuildingColor: {r: 0, g: 0, b: 0, a: 0}
   _canBuildingPlace: 1
   _isPlaced: 0
+  SpawnDetectionLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   _name: 
   _description: 
   _buildingSprite: {fileID: 0}
@@ -111,7 +114,7 @@ MonoBehaviour:
   _buildingType: 0
   _buildingUnits: 
   _teamTypes: 0
-  _unitSpawnPoint: {fileID: 0}
+  _unitSpawnPoints: []
 --- !u!114 &5796217507251997579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4219a324051a6fc4c956da386983dd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitType: 1
   healthBar: {fileID: 1448329718445373860}
   CurrentHealth: 0
 --- !u!1 &2557666331290324665
@@ -141,7 +145,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7589832701477445143
 Transform:
@@ -225,7 +229,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &644860478905470057
 Transform:

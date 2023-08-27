@@ -92,6 +92,13 @@ public class SoldierAnim : MonoBehaviour
         }
     }
 
+    public void DamageTakenAnimation()
+    {
+        soldierAnim.SetTrigger("_damageTaken");
+        
+        _attackCooldown = defaultAttackCooldown;
+    }
+
     void CheckSpriteDirection()
     {
         bool flipX = false;

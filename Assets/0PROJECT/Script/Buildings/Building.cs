@@ -22,6 +22,7 @@ public class Building : MonoBehaviour, IBuilding
     [Header("Control Bools")]
     public bool _canBuildingPlace = true;
     public bool _isPlaced = false;
+    [SerializeField] private LayerMask SpawnDetectionLayerMask;
 
 
     #region Main Variables
@@ -34,7 +35,7 @@ public class Building : MonoBehaviour, IBuilding
     [SerializeField] private BuildingType _buildingType;
     [SerializeField] private List<SoldierType> _buildingUnits;
     public TeamTypes _teamTypes;
-    public Transform _unitSpawnPoint;
+    public List<Transform> _unitSpawnPoints;
     #endregion
 
     #region Interface Variables
@@ -96,21 +97,6 @@ public class Building : MonoBehaviour, IBuilding
         CheckCollision();
     }
 
-
-    void OnMouseDown()
-    {
-        if (!_isPlaced) return;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-
-        }
-    }
-
     public void ClickPlacedBuilding()
     {
         if (!_isPlaced) return;
@@ -169,6 +155,20 @@ public class Building : MonoBehaviour, IBuilding
         CheckBuildingSprites(color, opacity);
     }
 
+    public Transform FindValidSpawnPoint()
+    {
+        foreach (Transform spawnPoint in _unitSpawnPoints)
+        {
+            Collider2D overlap = Physics2D.OverlapCircle(spawnPoint.position, 0.16f, SpawnDetectionLayerMask);
+
+            if (overlap == null)
+            {
+                return spawnPoint;
+            }
+        }
+
+        return _unitSpawnPoints[0]; // Return null if no valid spawn point is found
+    }
 
 
 

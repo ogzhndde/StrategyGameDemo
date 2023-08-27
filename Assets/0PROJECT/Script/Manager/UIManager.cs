@@ -11,9 +11,6 @@ public class UIManager : SingletonManager<UIManager>
     [Inject]
     GameManager manager;
     
-    GameData data;
-
-
     private void Start()
     {
 
@@ -24,12 +21,6 @@ public class UIManager : SingletonManager<UIManager>
         
     }
 
-    //######################################################### BUTTONS ##############################################################
-
-    void RandomButton()
-    {
-
-    }
 
     //########################################    EVENTS    ###################################################################
 
@@ -42,8 +33,4 @@ public class UIManager : SingletonManager<UIManager>
     {
         // EventManager.RemoveHandler(GameEvent.OnStart, OnStart);
     }
-
-
-
-
 }

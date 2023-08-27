@@ -72,6 +72,6 @@ public class SoldierMenu : MonoBehaviour, ISoldier
         InformationPanelManager infPanelMan = InformationPanelManager.Instance;
 
         Building currentBuilding = infPanelMan.CurrentBuilding.GetComponent<Building>();
-        ArmyFactory.CreateSoldier(_soldierType, _teamTypes, currentBuilding._unitSpawnPoint);
+        ArmyFactory.CreateSoldier(_soldierType, _teamTypes, currentBuilding.FindValidSpawnPoint());
     }
 }

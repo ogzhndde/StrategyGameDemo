@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6bbf25edfa41452499448cb77f1a07da
+guid: bb826fa4696a0a5459c00a36fb2d941b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -71,7 +71,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
@@ -140,160 +140,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MenuUI_PowerPlantButton
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 100
-        width: 250
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5198fa443b9cf4a47a8bbae31eb68cde
-      internalID: 662294296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_FenceButton
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 100
-        width: 250
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d046c77db7196941b9a7550599a86da
-      internalID: -172141113
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_BarrackButton
+      name: Particle_Explode_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
-        height: 100
+        width: 118
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9faee1cc19dc43e418cd406e25438134
-      internalID: -1849025613
+      spriteID: ed4f2f64ab72e2b4fb45583211d35ab2
+      internalID: 2123436614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MenuUI_HouseButton
+      name: Particle_Explode_1
       rect:
         serializedVersion: 2
-        x: 250
+        x: 118
         y: 0
-        width: 250
-        height: 100
+        width: 118
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e02d468be270260449a20d440b521e94
-      internalID: 636304524
+      spriteID: 94d9e5b94e9b28140be75e189c9a7698
+      internalID: -979901312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MenuUI_Rookie
+      name: Particle_Explode_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 200
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1edf677e02b65541a01c6f8c1888f8c
-      internalID: -1993856253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_Officer
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 200
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de2339309b2a0c645a142d38d2a52003
-      internalID: -5699460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuUI_General
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 200
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c087395125ff1cd408b9e874d274a86f
-      internalID: -200684717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_Fence
-      rect:
-        serializedVersion: 2
-        x: 630
+        x: 236
         y: 0
-        width: 130
-        height: 130
+        width: 118
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fd09dc9eaf0e354698994963b4ab8fe
-      internalID: -417634510
+      spriteID: 858c3a353e3a63d4c975fb05bcc9b9d2
+      internalID: -269614420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InfoUI_House
+      name: Particle_Explode_3
       rect:
         serializedVersion: 2
-        x: 500
+        x: 354
         y: 0
-        width: 130
-        height: 130
+        width: 118
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a24a2d5d1a96d9b4ca804163024ba506
-      internalID: 552197807
+      spriteID: e37579b9d51494345bd81e08813b78e3
+      internalID: 1419004826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InfoUI_Barrack
+      name: Particle_Explode_4
       rect:
         serializedVersion: 2
-        x: 500
-        y: 130
-        width: 130
-        height: 130
+        x: 472
+        y: 0
+        width: 118
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -343,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f82bd15b7e6cbf845bb167f4f5832aef
-      internalID: -1899843278
+      spriteID: 33c8b666e500f844490dd0c0d41cf661
+      internalID: 1359096032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InfoUI_PowerPlant
+      name: Particle_Explode_5
       rect:
         serializedVersion: 2
-        x: 630
-        y: 130
-        width: 130
-        height: 130
+        x: 590
+        y: 0
+        width: 118
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238ae91475ae34148aa8ede84ed59a3a
-      internalID: 233839801
+      spriteID: 4ed25766fc6df2643917ace6a42602d1
+      internalID: -378109098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MenuUI_Flag
+      name: Particle_Explode_6
       rect:
         serializedVersion: 2
-        x: 390
-        y: 255
-        width: 50
-        height: 75
+        x: 708
+        y: 0
+        width: 118
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -385,8 +280,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe66fbf63c2ebfa4f9f6edfdafc9b61c
-      internalID: 1883393289
+      spriteID: 652a0cc5482a4a340aa95d7e0237cfc3
+      internalID: 1748320810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Particle_Explode_7
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 0
+        width: 118
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec62288cf291a2449f59d5f27ba4c6d
+      internalID: 462184194
       vertices: []
       indices: 
       edges: []
@@ -402,18 +318,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      InfoUI_PowerPlant: 233839801
-      MenuUI_Officer: -5699460
-      MenuUI_BarrackButton: -1849025613
-      InfoUI_Fence: -417634510
-      MenuUI_Flag: 1883393289
-      InfoUI_Barrack: -1899843278
-      MenuUI_General: -200684717
-      MenuUI_PowerPlantButton: 662294296
-      InfoUI_House: 552197807
-      MenuUI_HouseButton: 636304524
-      MenuUI_FenceButton: -172141113
-      MenuUI_Rookie: -1993856253
+      Particle_Explode_4: 1359096032
+      Particle_Explode_0: 2123436614
+      Particle_Explode_6: 1748320810
+      Particle_Explode_7: 462184194
+      Particle_Explode_2: -269614420
+      Particle_Explode_1: -979901312
+      Particle_Explode_5: -378109098
+      Particle_Explode_3: 1419004826
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

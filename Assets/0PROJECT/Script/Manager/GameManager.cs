@@ -13,7 +13,6 @@ public class GameManager : SingletonManager<GameManager>
     [Serializable]
     public struct ScriptableObjects
     {
-        public GameData data;
         public RookieSoldierSO rookieData;
         public OfficerSoldierSO officerData;
         public GeneralSoldierSO GeneralData;
@@ -21,12 +20,7 @@ public class GameManager : SingletonManager<GameManager>
         public PowerPlantsSO PowerPlantData;
         public HouseSO HouseData;
         public FenceSO FenceData;
-    }
-
-
-    void Awake()
-    {
-
+        public ParticleSO ParticleData;
     }
 
     void Start()

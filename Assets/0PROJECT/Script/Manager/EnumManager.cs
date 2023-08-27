@@ -30,12 +30,24 @@ public enum BuildingType
     Fence
 }
 
+public enum UnitType
+{
+    Soldier,
+    Building
+}
+
 public enum SoldierState
 {
     Idle,
     Run,
     Fight,
     Dead
+}
+
+public enum ParticleType
+{
+    ExplodeParticle,
+    HitParticle
 }
 
 
