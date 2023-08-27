@@ -71,7 +71,7 @@ public class DamageController : MonoBehaviour, IHittable
                 break;
 
             case UnitType.Building:
-                ParticleFactory.SpawnParticle(ParticleType.HitParticle, transform.GetChild(0).transform.position + Vector3.one * Random.Range(-0.32f, 0.32f));
+                ParticleFactory.SpawnParticle(ParticleType.HitParticle, transform.position + Vector3.one * Random.Range(-0.32f, 0.32f));
                 break;
         }
     }
@@ -85,7 +85,7 @@ public class DamageController : MonoBehaviour, IHittable
                 break;
 
             case UnitType.Building:
-                ParticleFactory.SpawnParticle(ParticleType.ExplodeParticle, transform.GetChild(0).transform.position);
+                ParticleFactory.SpawnParticle(ParticleType.ExplodeParticle, transform.position);
                 break;
         }
 

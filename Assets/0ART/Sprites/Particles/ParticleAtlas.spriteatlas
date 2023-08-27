@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ParticleAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 1
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: cc029d13c5c819444af10399fdd0e75a, type: 3}
+    - {fileID: 2800000, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -1398534080, guid: cc029d13c5c819444af10399fdd0e75a, type: 3}
+  - {fileID: -814088979, guid: cc029d13c5c819444af10399fdd0e75a, type: 3}
+  - {fileID: -2029752981, guid: cc029d13c5c819444af10399fdd0e75a, type: 3}
+  - {fileID: 766045133, guid: cc029d13c5c819444af10399fdd0e75a, type: 3}
+  - {fileID: 1748320810, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+  - {fileID: 462184194, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+  - {fileID: 1359096032, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+  - {fileID: -378109098, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+  - {fileID: -269614420, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+  - {fileID: 1419004826, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+  - {fileID: 2123436614, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+  - {fileID: -979901312, guid: bb826fa4696a0a5459c00a36fb2d941b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Particle_Hit_2
+  - Particle_Hit_3
+  - Particle_Hit_0
+  - Particle_Hit_1
+  - Particle_Explode_6
+  - Particle_Explode_7
+  - Particle_Explode_4
+  - Particle_Explode_5
+  - Particle_Explode_2
+  - Particle_Explode_3
+  - Particle_Explode_0
+  - Particle_Explode_1
+  m_RenderDataMap: {}
+  m_Tag: ParticleAtlas
+  m_IsVariant: 0

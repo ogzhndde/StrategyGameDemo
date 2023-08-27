@@ -170,7 +170,7 @@ public class Building : MonoBehaviour, IBuilding
     {
         foreach (Transform spawnPoint in _unitSpawnPoints)
         {
-            Collider2D overlap = Physics2D.OverlapCircle(spawnPoint.position, 0.16f, SpawnDetectionLayerMask);
+            Collider2D overlap = Physics2D.OverlapCircle(spawnPoint.position, 0.12f, SpawnDetectionLayerMask);
 
             if (overlap == null)
             {
