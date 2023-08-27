@@ -1,5 +1,8 @@
 using UnityEngine;
-using Pathfinding;
+
+/// <summary>
+/// The class that constantly controls the walkable area
+/// </summary>
 
 public class WalkableAreaCheck : MonoBehaviour
 {

@@ -1,9 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using BuildingFactoryStatic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+/// <summary>
+/// The class on the building crafting buttons in the production panel.
+/// </summary>
 
 public class BuildingMenu : MonoBehaviour, IBuilding
 {
@@ -36,10 +39,9 @@ public class BuildingMenu : MonoBehaviour, IBuilding
     public int CellSize => _cellSize;
     public BuildingType BuildingType => _buildingType;
     public List<SoldierType> BuildingUnits => _buildingUnits;
-
-
     #endregion
 
+    //Set main properties of button
     public void SetBuildingProperties(string name, string description, Sprite buildingSprite, Sprite buildingInformationSprite, int health, int cellSize, BuildingType buildingType, TeamTypes teamTypes, List<SoldierType> buildingUnits = null)
     {
         _name = name;
@@ -53,6 +55,7 @@ public class BuildingMenu : MonoBehaviour, IBuilding
         _buildingUnits = buildingUnits;
     }
 
+    //Set visual properties of button
     public void SetVisualProperties()
     {
         this.name = _name + " " + _teamTypes.ToString();
@@ -76,6 +79,7 @@ public class BuildingMenu : MonoBehaviour, IBuilding
 
     private void ButtonBuilding()
     {
+        //Spawn the building from the building factory
         BuildingFactory.SpawnForPlacement(_buildingType, _teamTypes);
 
         EventManager.Broadcast(GameEvent.OnPlaySound, "SoundClick");

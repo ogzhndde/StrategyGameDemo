@@ -1,6 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// The class that makes the any class static
+/// </summary>
 
 public class SingletonManager<T> : MonoBehaviour where T : SingletonManager<T>
 {
@@ -16,7 +18,4 @@ public class SingletonManager<T> : MonoBehaviour where T : SingletonManager<T>
             return instance;
         }
     }
-
-
-
 }

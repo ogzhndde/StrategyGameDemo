@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using ArmyFactoryStatic;
 using TMPro;
@@ -7,6 +6,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Zenject;
+
+
+/// <summary>
+/// The class that controls the screen where the information of the objects clicked on in the game is displayed. 
+/// It keeps the necessary variables in it and makes the assignments to the defined places when necessary. 
+/// It also controls the spawning buttons of soldiers from the barracks.
+/// </summary>
+
 
 [Serializable]
 public struct PanelVariables
@@ -19,7 +26,6 @@ public struct PanelVariables
     public GameObject OBJ_UnitPanel;
     public Transform ContentParent;
     public List<GameObject> InfoPanelSubObjects;
-
 }
 
 public class InformationPanelManager : SingletonManager<InformationPanelManager>
@@ -28,10 +34,11 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
     GameManager gameManager;
     public PanelVariables panelVariables;
 
+    [Space(15)]
+    [Header("Definitions")]
     public GameObject CurrentBuilding;
-    [SerializeField] LayerMask buildingLayerMask;
-
     private Animator anim;
+    [SerializeField] LayerMask buildingLayerMask;
 
     void Start()
     {
@@ -44,38 +51,41 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
         CheckClickOnBuilding();
     }
 
+    //Checks if a building has been clicked by send ray
     private void CheckClickOnBuilding()
     {
         if (IsPointerOverUI()) return;
 
         if (Input.GetMouseButtonDown(0))
         {
+            //Check mouse position
             Vector3 clickPosition = Input.mousePosition;
-            clickPosition.z = -Camera.main.transform.position.z; // Uygun derinlik ayarı
+            clickPosition.z = -Camera.main.transform.position.z;
             Vector2 worldClickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
 
             RaycastHit2D hit = Physics2D.Raycast(worldClickPosition, Vector2.zero, Mathf.Infinity, buildingLayerMask);
 
             if (hit.collider != null)
             {
-                if (hit.collider.GetComponent<Building>())
+                if (hit.collider.GetComponent<Building>()) //If hit any building
                 {
                     Building building = hit.collider.GetComponent<Building>();
 
                     building.ClickPlacedBuilding();
                 }
-                else
+                else // Click on another object
                 {
                     ClearInformationPanel();
                 }
             }
-            else
+            else //Click on empty area
             {
                 ClearInformationPanel();
             }
         }
     }
 
+    //Rearranges the variables in the information panel according to the selected building
     private void UpdateInformationPanel(ref Building selectedBuilding, BuildingType buildingType, TeamTypes teamType)
     {
         AnimationControl(true);
@@ -97,6 +107,7 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
         }
     }
 
+    //Clear all panel variables
     public void ClearInformationPanel()
     {
         AnimationControl(false);
@@ -111,6 +122,7 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
         SubObjectsActivationCheck(false);
     }
 
+    //For optimization, it turns off unnecessary UI elements when the panel is off the screen.
     void SubObjectsActivationCheck(bool state)
     {
         foreach (var item in panelVariables.InfoPanelSubObjects)
@@ -124,10 +136,12 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
         return EventSystem.current.IsPointerOverGameObject();
     }
 
+    //Sets the animation setting according to the selected building
     private void AnimationControl(bool state)
     {
         anim.SetBool("_isPanelActive", state);
     }
+
 
     //##########################        EVENTS      ###################################
     void OnEnable()
@@ -140,6 +154,7 @@ public class InformationPanelManager : SingletonManager<InformationPanelManager>
         EventManager.RemoveHandler(GameEvent.OnClickPlacedBuilding, OnClickPlacedBuilding);
     }
 
+    //It gets the values of the clicked building via the event and updates the panel.
     private void OnClickPlacedBuilding(object _selectedBuilding, object _buildingType, object _teamType)
     {
         GameObject building = (GameObject)_selectedBuilding;

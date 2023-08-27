@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+
+/// <summary>
+/// Scriptable object that holds data of buildings
+/// </summary>
 
 [CreateAssetMenu(fileName = "Fence", menuName = "Buildings/FenceData", order = 1)]
 public class FenceSO : ScriptableObject

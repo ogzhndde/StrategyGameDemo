@@ -1,6 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// Subclass of the all soldiers.
+/// </summary>
 
 public abstract class SoldierProperties : ISoldier
 {

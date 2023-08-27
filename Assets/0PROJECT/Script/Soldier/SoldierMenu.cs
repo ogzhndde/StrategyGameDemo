@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using ArmyFactoryStatic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+
+/// <summary>
+/// The class on the UI Button that provides the soldier production.
+/// </summary>
 
 public class SoldierMenu : MonoBehaviour, ISoldier
 {
-
     [Header("Definitons")]
     [SerializeField] private TextMeshProUGUI TMP_Name;
     [SerializeField] private Image IMA_Soldier;
@@ -17,7 +17,6 @@ public class SoldierMenu : MonoBehaviour, ISoldier
 
 
     [Space(10)]
-
     #region Main Variables of SoldierUI
     [SerializeField] private string _name;
     [SerializeField] private Sprite _soldierSprite;
@@ -35,9 +34,9 @@ public class SoldierMenu : MonoBehaviour, ISoldier
     public int Damage => _damage;
     public int CellSize => _cellSize;
     public SoldierType SoldierType => _soldierType;
-
     #endregion
 
+    //Set soldier properties when he/she created
     public void SetSoldierProperties(string name, Sprite soldierSprite, int health, int damage, int cellSize, SoldierType soldierType, TeamTypes teamTypes)
     {
         _name = name;
@@ -49,6 +48,7 @@ public class SoldierMenu : MonoBehaviour, ISoldier
         _teamTypes = teamTypes;
     }
 
+    //Set visual properties of the soldier
     public void SetVisualProperties()
     {
         TMP_Name.text = _name;
@@ -67,6 +67,7 @@ public class SoldierMenu : MonoBehaviour, ISoldier
         BTN_SoldierUI.onClick.AddListener(ButtonSoldierSpawn);
     }
 
+    //Get current building from Information Panel Manager and spawn the soldier
     private void ButtonSoldierSpawn()
     {
         InformationPanelManager infPanelMan = InformationPanelManager.Instance;

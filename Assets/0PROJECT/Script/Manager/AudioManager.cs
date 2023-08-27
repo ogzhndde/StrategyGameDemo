@@ -1,7 +1,10 @@
-// using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// Manager class where all audio playbacks in the game are controlled. 
+/// It draws and plays the necessary sound sources with events. 
+/// There are also various methods for fine tuning.
+/// </summary>
 
 public class AudioManager : MonoBehaviour
 {
@@ -23,7 +26,7 @@ public class AudioManager : MonoBehaviour
         EventManager.RemoveHandler(GameEvent.OnPlaySoundPitch, OnPlaySoundPitch);
     }
 
-
+    //Get all audio clips from resources by name
     private void OnPlaySound(object value)
     {
         audioPlay.clip = Resources.Load<AudioClip>((string)value);

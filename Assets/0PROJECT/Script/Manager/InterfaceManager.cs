@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// All interfaces that are using in the game
+/// </summary>
+
 public interface ISoldier
 {
     string Name { get; }

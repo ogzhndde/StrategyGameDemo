@@ -1,15 +1,19 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
-using System.Linq;
 using Zenject;
 
+/// <summary>
+/// The class that produces all military units that can be produced.
+/// There is a main production class called ArmyFactory, and it provides the production of soldiers where necessary by pulling the specific data of the soldier types.
+/// There are 3 types of soldiers: Rookie, Officer and General.
+/// If a new type of soldier is to be added, it is sufficient to add it here.
+/// </summary>
 namespace ArmyFactoryStatic
 {
     public static class ArmyFactory
     {
+        //It stores all soldier types and production classes in a dictionary.
         private static Dictionary<SoldierType, Func<SoldierProperties>> soldierFactories = new Dictionary<SoldierType, Func<SoldierProperties>>
         {
             { SoldierType.Rookie, () => new CreateRookie() },
@@ -17,6 +21,7 @@ namespace ArmyFactoryStatic
             { SoldierType.General, () => new CreateGeneral() }
         };
 
+        //If a UI Button is to be spawned for the information panel, it is produced here.
         public static SoldierProperties SpawnForInformationMenu(SoldierType soldierType, TeamTypes teamTypes, Transform ContentParent)
         {
             if (soldierFactories.TryGetValue(soldierType, out var factory))
@@ -29,6 +34,7 @@ namespace ArmyFactoryStatic
                 return null;
         }
 
+        //The class in which military units are created.
         public static SoldierProperties CreateSoldier(SoldierType soldierType, TeamTypes teamTypes, Transform SpawnLocation)
         {
             if (soldierFactories.TryGetValue(soldierType, out var factory))
@@ -44,6 +50,7 @@ namespace ArmyFactoryStatic
         }
     }
 
+    //All necessary data for soldiers is drawn from scriptable objects and sent to the factory for production.
     public class CreateRookie : SoldierProperties
     {
         [Inject]
@@ -76,9 +83,9 @@ namespace ArmyFactoryStatic
             soldier.SetSoldierProperties(Name, SoldierSprite, Health, Damage, CellSize, SoldierType, teamTypes);
             EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSpawnRookie");
         }
-
-
     }
+    
+    //All necessary data for soldiers is drawn from scriptable objects and sent to the factory for production. 
     public class CreateOfficer : SoldierProperties
     {
         [Inject]
@@ -112,8 +119,9 @@ namespace ArmyFactoryStatic
             soldier.SetSoldierProperties(Name, SoldierSprite, Health, Damage, CellSize, SoldierType, teamTypes);
             EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSpawnOfficer");
         }
-
     }
+
+    //All necessary data for soldiers is drawn from scriptable objects and sent to the factory for production.
     public class CreateGeneral : SoldierProperties
     {
         [Inject]
@@ -147,8 +155,5 @@ namespace ArmyFactoryStatic
             EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSpawnGeneral");
         }
     }
-
-
-
 }
 

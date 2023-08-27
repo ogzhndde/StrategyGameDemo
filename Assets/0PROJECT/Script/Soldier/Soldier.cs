@@ -1,7 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// The base class where the data of the soldiers is kept. 
+/// All variables are assigned at the factory and this class passes this data to the classes it is responsible for.
+/// </summary>
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SoldierAI))]
@@ -32,9 +35,9 @@ public class Soldier : MonoBehaviour, ISoldier
     public int Damage => _damage;
     public int CellSize => _cellSize;
     public SoldierType SoldierType => _soldierType;
-
     #endregion
 
+    //Set soldier properties when he/she created
     public void SetSoldierProperties(string name, Sprite soldierSprite, int health, int damage, int cellSize, SoldierType soldierType, TeamTypes teamTypes)
     {
         _name = name;
@@ -60,6 +63,8 @@ public class Soldier : MonoBehaviour, ISoldier
         soldierAI = GetComponent<SoldierAI>();
         damageController = GetComponent<DamageController>();
     }
+
+    //Send required data to subclasses
     private void SetValuesOfSubScripts()
     {
         damageController.SetHealthBarValues(_health, _soldierColor);

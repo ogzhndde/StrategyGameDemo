@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using ParticleFactoryStatic;
 using UnityEngine;
+
+/// <summary>
+/// The class that controls the damage system of all damageable objects
+/// </summary>
 
 public class DamageController : MonoBehaviour, IHittable
 {
@@ -16,6 +18,7 @@ public class DamageController : MonoBehaviour, IHittable
         soldierAnim = GetComponentInChildren<SoldierAnim>();
     }
 
+    //Assign health values when object is created
     public void SetHealthBarValues(int health, Color teamColor)
     {
         CurrentHealth = health;
@@ -41,13 +44,14 @@ public class DamageController : MonoBehaviour, IHittable
 
     public void TakeDamage(int damage)
     {
+        //If a soldier takes damage, play animation
         if (unitType == UnitType.Soldier)
             soldierAnim.DamageTakenAnimation();
 
         SpawnHitParticle();
 
         CurrentHealth -= damage;
-        if (CurrentHealth <= 0)
+        if (CurrentHealth <= 0)  //Death
         {
             DeathProcess();
             ObjectPoolManager.ReturnObjectToPool(gameObject);
@@ -57,6 +61,7 @@ public class DamageController : MonoBehaviour, IHittable
         healthBar.SetHealth(CurrentHealth);
     }
 
+    //Spawn particle according to the unit type
     void SpawnHitParticle()
     {
         switch (unitType)

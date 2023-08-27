@@ -1,5 +1,10 @@
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// The class in which the cursor control is made.
+/// According to the mouse's position, which object is detected and the control assigns the 
+/// cursor from the scriptable object holding the cursor data.
+/// </summary>
 
 public class CursorController : MonoBehaviour
 {
@@ -11,6 +16,7 @@ public class CursorController : MonoBehaviour
         SetCursor();
     }
 
+    //Controls which object the mouse is on and return enum
     private ScriptType CheckWhichScriptTargetHas(Component[] components)
     {
         foreach (var component in components)
@@ -21,10 +27,10 @@ public class CursorController : MonoBehaviour
             if (component is Soldier)
                 return ScriptType.Soldier;
         }
-
         return ScriptType.None;
     }
 
+    //Set cursor image according to the enum value
     private void SetCursor()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 0f, DetectionLayers);

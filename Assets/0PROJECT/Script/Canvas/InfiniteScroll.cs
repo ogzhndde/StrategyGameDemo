@@ -2,12 +2,15 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class that scrolls the panel in the UI in an infinite loop.
+/// </summary>
+
 public class InfiniteScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IScrollHandler
 {
     #region Private Members
-
-    [SerializeField]private ScrollContent scrollContent;
-    [SerializeField]private float outOfBoundsThreshold;
+    [SerializeField] private ScrollContent scrollContent;
+    [SerializeField] private float outOfBoundsThreshold;
     private ScrollRect scrollRect;
     private Vector2 lastDragPosition;
     private bool positiveDrag;
@@ -25,6 +28,8 @@ public class InfiniteScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IS
     {
         lastDragPosition = eventData.position;
     }
+
+    // Operations while dragging
     public void OnDrag(PointerEventData eventData)
     {
         positiveDrag = eventData.position.y > lastDragPosition.y;
@@ -49,7 +54,7 @@ public class InfiniteScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IS
         HandleVerticalScroll();
     }
 
-
+    // Repositions all child objects in a loop.
     private void HandleVerticalScroll()
     {
         int currItemIndex = positiveDrag ? scrollRect.content.childCount - 1 : 0;
@@ -77,6 +82,7 @@ public class InfiniteScroll : MonoBehaviour, IBeginDragHandler, IDragHandler, IS
         currItem.SetSiblingIndex(endItemIndex);
     }
 
+    // Check if the item reached the threshold or not
     private bool ReachedThreshold(Transform item)
     {
         float posYThreshold = transform.position.y + scrollContent.Height * 0.5f + outOfBoundsThreshold;

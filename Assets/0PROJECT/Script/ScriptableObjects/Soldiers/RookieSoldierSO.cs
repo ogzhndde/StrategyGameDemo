@@ -1,7 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+
+/// <summary>
+/// Scriptable object that holds data of soldiers
+/// </summary>
 
 [CreateAssetMenu(fileName = "RookieSoldierData", menuName = "Soldiers/Rookie Soldier Data", order = 1)]
 public class RookieSoldierSO : ScriptableObject

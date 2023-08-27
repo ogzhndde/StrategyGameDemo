@@ -1,21 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
 
+/// <summary>
+/// A class that handles all animation controls of the character and holds animation events.
+/// </summary>
+
 public class SoldierAnim : MonoBehaviour
 {
+    [Header("Control Variables")]
     [SerializeField] private SoldierState soldierStateEnum;
     [SerializeField] private GameObject _currentTarget;
+    private float _attackCooldown;
+    private bool _isInCombat = false;
+
+    [Space(15)]
+    [Header("Definitions")]
     private Soldier soldier;
     private DamageController damageController;
     private Animator soldierAnim;
     private AIPath aIPath;
     private SpriteRenderer spriteRenderer;
-
     [SerializeField] private float defaultAttackCooldown;
-    private float _attackCooldown;
-    private bool _isInCombat = false;
 
 
     void Awake()
@@ -39,6 +44,7 @@ public class SoldierAnim : MonoBehaviour
         soldierStateEnum = soldierState;
     }
 
+    //Get current target of soldier and set to use
     public void SetSoldierTarget(bool _isThereAnyTarget, GameObject currentTarget = null)
     {
         if (_isThereAnyTarget == true)
@@ -52,11 +58,12 @@ public class SoldierAnim : MonoBehaviour
         damageController.GiveDamage(_currentTarget, soldier.Damage);
     }
 
+    //Set animation values according to soldier state.
     void SetAnimationValues()
     {
         _isInCombat = false;
 
-        float stateValue = 0;
+        float stateValue = 0; //Blending tree value
         switch (soldierStateEnum)
         {
             case SoldierState.Idle:
@@ -72,16 +79,14 @@ public class SoldierAnim : MonoBehaviour
                 _isInCombat = true;
                 ChargeTimer();
                 break;
-
         }
-
         soldierAnim.SetFloat("stateValue", stateValue);
     }
 
+    //Attack cooldown
     void ChargeTimer()
     {
-        if (!_isInCombat)
-            return;
+        if (!_isInCombat) return;
 
         _attackCooldown -= Time.deltaTime;
 
@@ -95,24 +100,24 @@ public class SoldierAnim : MonoBehaviour
     public void DamageTakenAnimation()
     {
         soldierAnim.SetTrigger("_damageTaken");
-
         _attackCooldown = defaultAttackCooldown;
     }
 
+    //Set the soldier facing direction
     void CheckSpriteDirection()
     {
         bool flipX = false;
 
         switch (_isInCombat)
         {
-            case true:
+            case true: //If there is a target, face to target
                 float targetWorldXPos = _currentTarget.transform.position.x;
                 float soldiertWorldXPos = transform.position.x;
 
                 flipX = targetWorldXPos > soldiertWorldXPos ? false : true;
                 break;
 
-            case false:
+            case false: //If there is no target, face to path
                 flipX = aIPath.desiredVelocity.x > 0.01f ? false : true;
                 break;
         }

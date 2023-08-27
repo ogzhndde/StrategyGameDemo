@@ -1,11 +1,18 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
+/// <summary>
+/// The class that produces all buildings that can be produced.
+/// There is a main production class called BuildingFactory, and it provides the production of buildings where necessary by pulling the specific data of the building types.
+/// There are 4 types of buildings: Barracks, Power Plants, Houses and Fences.
+/// If a new type of building is to be added, it is sufficient to add it here.
+/// </summary>
+
 namespace BuildingFactoryStatic
 {
+    //It stores all building types and production classes in a dictionary.
     public static class BuildingFactory
     {
         private static Dictionary<BuildingType, Func<BuildingProperties>> buildingFactories = new Dictionary<BuildingType, Func<BuildingProperties>>
@@ -16,6 +23,7 @@ namespace BuildingFactoryStatic
             {BuildingType.Fence, () => new CreateFence()}
         };
 
+        //If a UI Button is to be spawned for the production panel, it is produced here.
         public static BuildingProperties SpawnForProductionMenu(BuildingType buildingType, TeamTypes teamTypes, Transform ContentParent)
         {
             if (buildingFactories.TryGetValue(buildingType, out var factory))
@@ -28,6 +36,7 @@ namespace BuildingFactoryStatic
                 return null;
         }
 
+        //The class in which building are created.
         public static BuildingProperties SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
         {
             if (buildingFactories.TryGetValue(buildingType, out var factory))
@@ -41,6 +50,7 @@ namespace BuildingFactoryStatic
         }
     }
 
+    //All necessary data for buildings is drawn from scriptable objects and sent to the factory for production.
     public class CreateBarrack : BuildingProperties
     {
         [Inject]
@@ -67,11 +77,7 @@ namespace BuildingFactoryStatic
         public override void SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
         {
             manager = GameManager.Instance;
-
-            float mousePosX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-            float mousePosY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
-            float mousePosZ = 0;
-            Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
+            Vector3 mousePos = GetMousePosition();
 
             var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.BarrackData.BuildingPrefab, mousePos, Quaternion.identity);
             var building = spawnedBuilding.GetComponent<Building>();
@@ -82,6 +88,7 @@ namespace BuildingFactoryStatic
         }
     }
 
+    //All necessary data for buildings is drawn from scriptable objects and sent to the factory for production.
     public class CreatePowerPlants : BuildingProperties
     {
         [Inject]
@@ -108,11 +115,7 @@ namespace BuildingFactoryStatic
         public override void SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
         {
             manager = GameManager.Instance;
-
-            float mousePosX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-            float mousePosY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
-            float mousePosZ = 0;
-            Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
+            Vector3 mousePos = GetMousePosition();
 
             var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.PowerPlantData.BuildingPrefab, mousePos, Quaternion.identity);
             var building = spawnedBuilding.GetComponent<Building>();
@@ -123,6 +126,7 @@ namespace BuildingFactoryStatic
         }
     }
 
+    //All necessary data for buildings is drawn from scriptable objects and sent to the factory for production.
     public class CreateHouse : BuildingProperties
     {
         [Inject]
@@ -149,11 +153,7 @@ namespace BuildingFactoryStatic
         public override void SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
         {
             manager = GameManager.Instance;
-
-            float mousePosX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-            float mousePosY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
-            float mousePosZ = 0;
-            Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
+            Vector3 mousePos = GetMousePosition();
 
             var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.HouseData.BuildingPrefab, mousePos, Quaternion.identity);
             var building = spawnedBuilding.GetComponent<Building>();
@@ -164,6 +164,7 @@ namespace BuildingFactoryStatic
         }
     }
 
+    //All necessary data for buildings is drawn from scriptable objects and sent to the factory for production.
     public class CreateFence : BuildingProperties
     {
         [Inject]
@@ -190,11 +191,7 @@ namespace BuildingFactoryStatic
         public override void SpawnForPlacement(BuildingType buildingType, TeamTypes teamTypes)
         {
             manager = GameManager.Instance;
-
-            float mousePosX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-            float mousePosY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
-            float mousePosZ = 0;
-            Vector3 mousePos = new(mousePosX, mousePosY, mousePosZ);
+            Vector3 mousePos = GetMousePosition();
 
             var spawnedBuilding = ObjectPoolManager.SpawnObjects(manager.SO.FenceData.BuildingPrefab, mousePos, Quaternion.identity);
             var building = spawnedBuilding.GetComponent<Building>();

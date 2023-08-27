@@ -1,7 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+
+/// <summary>
+/// Scriptable object that holds data of buildings
+/// </summary>
 
 [CreateAssetMenu(fileName = "Barrack", menuName = "Buildings/Barrack Data", order = 1)]
 public class BarrackSO : ScriptableObject

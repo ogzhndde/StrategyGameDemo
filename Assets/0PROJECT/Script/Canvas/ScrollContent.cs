@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// // The class that holds all the variables on the scroll screen.
+/// </summary>
 public class ScrollContent : MonoBehaviour
 {
     #region Public Properties
@@ -27,6 +30,7 @@ public class ScrollContent : MonoBehaviour
 
     void Start()
     {
+        // Controls the space between items according to the screen resolution.
         InvokeRepeating(nameof(CheckItemSpacing), 0, 0.5f);
     }
     public void UpdateScrollView()
@@ -69,10 +73,12 @@ public class ScrollContent : MonoBehaviour
 
     private void CheckItemSpacing()
     {
+        //Reference values
         float itemSpacing1920 = 25f;
         float itemSpacing2560 = -25f;
         float itemSpacing3840 = -125f;
 
+        //Set new itemSpacing values according to reference values
         float normalizedWidth = Mathf.InverseLerp(1920f, 3840f, Screen.width);
         itemSpacing = Mathf.Lerp(itemSpacing1920, itemSpacing2560, normalizedWidth);
         if (Screen.width >= 2560)

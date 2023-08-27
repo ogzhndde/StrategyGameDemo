@@ -1,11 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using Pathfinding;
-using System.Linq;
 using System;
 using Random = UnityEngine.Random;
+
+/// <summary>
+/// The class that controls the AIs of the soldiers. 
+/// All movements, attack situations, target locations etc. is kept here.
+/// </summary>
 
 public class SoldierAI : MonoBehaviour
 {
@@ -36,11 +38,9 @@ public class SoldierAI : MonoBehaviour
         coll = GetComponent<Collider2D>();
     }
 
-
     void Update()
     {
         CheckEndReach();
-
     }
 
     private void FixedUpdate()
@@ -49,12 +49,14 @@ public class SoldierAI : MonoBehaviour
         CheckCombatState();
     }
 
+    //Set a new target to AI and make him go the target
     public void SetNewDestination(Transform target)
     {
         TargetDestination = target;
         aIPath.destination = TargetDestination.position;
     }
 
+    //If there is a target, it scans and lists all targets in its vicinity.
     private void CheckAround()
     {
         if (TargetDestination == null) return;
@@ -64,7 +66,7 @@ public class SoldierAI : MonoBehaviour
 
         foreach (Collider2D collider in CollidersAround)
         {
-            if (collider != coll)
+            if (collider != coll) //Ignore own collider
             {
                 if (collider.gameObject.layer == LayerMask.NameToLayer("Building"))
                 {
@@ -82,11 +84,12 @@ public class SoldierAI : MonoBehaviour
         }
     }
 
+    // If you reach the target, go into attack state.
     private void CheckCombatState()
     {
         if (TargetDestination == null) return;
 
-        if (EnemiesTargetAround.Contains(TargetDestination.gameObject))
+        if (EnemiesTargetAround.Contains(TargetDestination.gameObject)) //If your target is around
         {
             _isAlreadyFighting = true;
             soldierAnim.SetSoldierState(SoldierState.Fight);
@@ -99,17 +102,14 @@ public class SoldierAI : MonoBehaviour
             aIPath.canMove = true;
             soldierAnim.SetSoldierTarget(_isThereAnyTarget: false);
 
-            if (aIPath.desiredVelocity.magnitude > 0.01)
-            {
+            if (aIPath.desiredVelocity.magnitude > 0.01) //Check pathfinding magnitude to make decision of running or idleing
                 soldierAnim.SetSoldierState(SoldierState.Run);
-            }
             else
-            {
                 soldierAnim.SetSoldierState(SoldierState.Idle);
-            }
         }
     }
 
+    //Check reach the target or not
     private void CheckEndReach()
     {
         if (TargetDestination == null) return;
@@ -121,6 +121,7 @@ public class SoldierAI : MonoBehaviour
         }
     }
 
+    //For object pooling, reset values when death
     void ResetMovementValues()
     {
         TargetDestination = null;
@@ -148,11 +149,9 @@ public class SoldierAI : MonoBehaviour
         ResetMovementValues();
         EventManager.RemoveHandler(GameEvent.OnClickToAttack, OnClickToAttack);
         EventManager.RemoveHandler(GameEvent.OnClickToMove, OnClickToMove);
-
     }
 
-
-
+    //Event for attacking a target
     private void OnClickToAttack(object selectedSoldier, object selectedTarget)
     {
         if ((GameObject)selectedSoldier != gameObject)
@@ -161,9 +160,10 @@ public class SoldierAI : MonoBehaviour
         GameObject targetUnit = (GameObject)selectedTarget;
 
         SetNewDestination(targetUnit.transform);
-        EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSoldierCharge" + Random.Range(1, 3));
+        EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSoldierCharge" + Random.Range(1, 3)); 
     }
 
+    //Event for just move
     private void OnClickToMove(object selectedSoldier, object selectedLocation)
     {
         if ((GameObject)selectedSoldier != gameObject)

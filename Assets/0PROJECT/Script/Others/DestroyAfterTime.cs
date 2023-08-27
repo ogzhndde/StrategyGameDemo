@@ -1,6 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// The class that sends the object back to the pool with a certain delay
+/// </summary>
 
 public class DestroyAfterTime : MonoBehaviour
 {

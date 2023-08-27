@@ -1,14 +1,13 @@
 using System;
-using ArmyFactoryStatic;
-using BuildingFactoryStatic;
 using UnityEngine;
-using Random = UnityEngine.Random;
+
+/// <summary>
+/// The class where the main variables related to the game are kept.
+/// </summary>
 
 public class GameManager : SingletonManager<GameManager>
 {
-
     public ScriptableObjects SO;
-
 
     [Serializable]
     public struct ScriptableObjects
@@ -24,27 +23,5 @@ public class GameManager : SingletonManager<GameManager>
         public CursorSO CursorData;
     }
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
-
-    //########################################    EVENTS    ###################################################################
-
-    private void OnEnable()
-    {
-        // EventManager.AddHandler(GameEvent.OnStart, OnStart);
-    }
-
-    private void OnDisable()
-    {
-        // EventManager.RemoveHandler(GameEvent.OnStart, OnStart);
-    }
 
 }

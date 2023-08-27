@@ -1,10 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using Unity.VisualScripting;
-using System.ComponentModel;
 using System;
+
+/// <summary>
+/// Object Pool class. 
+/// It adds the generated objects to a pool and then pulls the destroyed objects back into that pool. 
+/// If it needs to be recreated from this object later, it opens and uses the closed object in the pool.
+/// </summary>
 
 public class ObjectPoolManager : MonoBehaviour
 {
@@ -23,9 +26,9 @@ public class ObjectPoolManager : MonoBehaviour
         SetupEmpties();
     }
 
+    //Create gameobjects in scene to keep pooled objects
     private void SetupEmpties()
     {
-        // CREATE GAMEOBJECTS IN SCENE TO KEEP POOL OBJECTS
         _objectPoolEmptyHolder = new GameObject("Pooled Objects");
 
         _particleSystemEmpty = new GameObject("Particle Effects");
@@ -37,12 +40,13 @@ public class ObjectPoolManager : MonoBehaviour
 
     public static GameObject SpawnObjects(GameObject objectToSpawn, Vector3 spawnPosition, Quaternion spawnRotation, PoolType poolType = PoolType.None)
     {
+        //Check if there is a pool of spawned object
         PooledObjectInfo pool = ObjectPools.Find(p => p.LookupString == objectToSpawn.name);
 
         if (pool == null)
         {
+            //If there is no pool, create one
             pool = new PooledObjectInfo() { LookupString = objectToSpawn.name };
-
             ObjectPools.Add(pool);
         }
 
@@ -50,10 +54,10 @@ public class ObjectPoolManager : MonoBehaviour
 
         if (spawnableObj == null)
         {
-            //SET PARENT
+            //Set parent
             GameObject parentObject = SetParentObjects(poolType);
 
-            //IF THERE IS NO INACTIVE OBJECTS, SPAWN A NEW ONE
+            //If there is no inactive objects, spawn new one
             spawnableObj = Instantiate(objectToSpawn, spawnPosition, spawnRotation);
 
             if (parentObject != null)
@@ -63,7 +67,7 @@ public class ObjectPoolManager : MonoBehaviour
         }
         else
         {
-            //IF THERE IS AN INACTIVE OBJECT, REACTIVE IT
+            //If there is an inactive object, reactive it
             spawnableObj.transform.position = spawnPosition;
             spawnableObj.transform.rotation = spawnRotation;
             pool.InactiveObjects.Remove(spawnableObj);
@@ -73,14 +77,16 @@ public class ObjectPoolManager : MonoBehaviour
         return spawnableObj;
     }
 
+    //Overload of SpawnObjects
     public static GameObject SpawnObjects(GameObject objectToSpawn, Transform parentTransform)
     {
+        //Check if there is a pool of spawned object
         PooledObjectInfo pool = ObjectPools.Find(p => p.LookupString == objectToSpawn.name);
 
         if (pool == null)
         {
+            //If there is no pool, create one
             pool = new PooledObjectInfo() { LookupString = objectToSpawn.name };
-
             ObjectPools.Add(pool);
         }
 
@@ -88,12 +94,12 @@ public class ObjectPoolManager : MonoBehaviour
 
         if (spawnableObj == null)
         {
-            //IF THERE IS NO INACTIVE OBJECTS, SPAWN A NEW ONE
+            //If there is no inactive objects, spawn new one
             spawnableObj = Instantiate(objectToSpawn, parentTransform);
         }
         else
         {
-            //IF THERE IS AN INACTIVE OBJECT, REACTIVE IT
+            //If there is an inactive object, reactive it
             pool.InactiveObjects.Remove(spawnableObj);
             spawnableObj.SetActive(true);
         }
@@ -101,9 +107,10 @@ public class ObjectPoolManager : MonoBehaviour
         return spawnableObj;
     }
 
+    //When an objects destroy, return it to the pool
     public static void ReturnObjectToPool(GameObject obj)
     {
-        string goName = obj.name.Substring(0, obj.name.Length - 7); //CUT THE (CLONE) PART FROM NAME
+        string goName = obj.name.Substring(0, obj.name.Length - 7); //Cut the (Clone) part from name
 
         PooledObjectInfo pool = ObjectPools.Find(p => p.LookupString == goName);
 
@@ -118,6 +125,7 @@ public class ObjectPoolManager : MonoBehaviour
         }
     }
 
+    //You can make the spawn objects childs of the relevant place
     private static GameObject SetParentObjects(PoolType poolType)
     {
         switch (poolType)
@@ -127,7 +135,7 @@ public class ObjectPoolManager : MonoBehaviour
 
             case PoolType.Gameobject:
                 return _gameobjectsEmpty;
-                
+
             case PoolType.None:
                 return null;
 

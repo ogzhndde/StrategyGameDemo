@@ -1,18 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+/// <summary>
+/// The class that controls the placement operations of the produced buildings. 
+/// By reaching the tilemap system, it places in the gridal system.
+/// </summary>
+
 public class PlacementManager : SingletonManager<PlacementManager>
 {
+    [Header("Definitions")]
     [SerializeField] private Tilemap tilemap;
-    [SerializeField] private TileBase currentTile;
-    [SerializeField] private GameObject SelectedBuilding;
-
     [SerializeField] private GameObject highlighter;
+
+    [Space(15)]
+    [Header("Conrtol Variables")]
+    [SerializeField] private GameObject SelectedBuilding;
+    [SerializeField] private TileBase currentTile;
     public Vector3 cellWorldPos;
     private Vector3 tileBottomLeft;
+
 
     void Update()
     {
@@ -25,11 +31,13 @@ public class PlacementManager : SingletonManager<PlacementManager>
         Vector3Int cellPos = tilemap.WorldToCell(mouseWorldPos);
 
         cellWorldPos = tilemap.GetCellCenterWorld(cellPos);
+
+        //Detect left-bottom point of grid to place building
         tileBottomLeft = cellWorldPos - new Vector3(tilemap.cellSize.x / 2f, tilemap.cellSize.y / 2f, 0f);
 
         currentTile = tilemap.GetTile(cellPos);
 
-        //SET POSITION OF HIGHLIGHTER SPRITE
+        //Set position of Highlighter object
         GetCurrentMovingObject().transform.position = tileBottomLeft;
 
         MouseOperations();
@@ -43,7 +51,7 @@ public class PlacementManager : SingletonManager<PlacementManager>
         }
     }
 
-
+    //If there is selected building and the buildings is in a available area, place the building
     private void PlaceAnyBuilding()
     {
         if (SelectedBuilding == null) return;
@@ -53,9 +61,10 @@ public class PlacementManager : SingletonManager<PlacementManager>
 
         EventManager.Broadcast(GameEvent.OnPlaceBuilding, SelectedBuilding);
         EventManager.Broadcast(GameEvent.OnPlaySound, "SoundPlacement");
-
     }
 
+
+    //Return which object will follow the cursor, selectedBuilding or highlighter
     private GameObject GetCurrentMovingObject()
     {
         highlighter.gameObject.SetActive(SelectedBuilding == null ? true : false);
@@ -66,16 +75,13 @@ public class PlacementManager : SingletonManager<PlacementManager>
             return SelectedBuilding;
     }
 
+    //To send object pool, clear data of building
     private void ClearPreviousBuilding()
     {
         if (SelectedBuilding == null) return;
 
         ObjectPoolManager.ReturnObjectToPool(SelectedBuilding);
     }
-
-
-
-
 
     //##########################        EVENTS      ###################################
 
@@ -91,6 +97,7 @@ public class PlacementManager : SingletonManager<PlacementManager>
         EventManager.RemoveHandler(GameEvent.OnPlaceBuilding, OnPlaceBuilding);
     }
 
+    //Create a building and make it selected building
     private void OnClickBuildingUI(object _selectedBuilding, object _buildingType, object _teamType)
     {
         GameObject building = (GameObject)_selectedBuilding;
@@ -99,6 +106,7 @@ public class PlacementManager : SingletonManager<PlacementManager>
 
         SelectedBuilding = building;
     }
+
     private void OnPlaceBuilding(object value)
     {
         SelectedBuilding = null;

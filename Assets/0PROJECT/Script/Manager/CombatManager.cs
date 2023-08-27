@@ -1,19 +1,27 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
-using Random = UnityEngine.Random;
+
+/// <summary>
+/// Manager class where all audio playbacks in the game are controlled. 
+/// It draws and plays the necessary sound sources with events. 
+/// There are also various methods for fine tuning.
+/// </summary>
 
 public class CombatManager : MonoBehaviour
 {
     [Inject]
     PlacementManager placementManager;
-    [SerializeField] private GameObject SelectedSoldier;
 
-    [SerializeField] private GameObject EmptyAreaMovemenPrefab;
+    [Header("Control Variables")]
+    [SerializeField] private GameObject SelectedSoldier;
     [SerializeField] private LayerMask layerMask;
+
+
+    [Space(15)]
+    [Header("Definitions")]
+    [SerializeField] private GameObject EmptyAreaMovemenPrefab;
 
 
     void Update()
@@ -23,13 +31,12 @@ public class CombatManager : MonoBehaviour
 
     private void CheckClickOnUnits()
     {
+        //If it is on UI, return the method
         if (IsPointerOverUI()) return;
 
-        //LEFT CLICK PROCESS
+        //Left click operations
         if (Input.GetMouseButtonDown(0))
         {
-            // Vector3 clickPosition = Input.mousePosition;
-            // clickPosition.z = -Camera.main.transform.position.z; //DERINLIK AYARI
             Vector2 worldClickPosition = GetMouseClickPosition();
 
             RaycastHit2D hit = Physics2D.Raycast(worldClickPosition, Vector2.zero, Mathf.Infinity, layerMask);
@@ -38,6 +45,7 @@ public class CombatManager : MonoBehaviour
             {
                 if (hit.collider.GetComponent<Soldier>())
                 {
+                    //If ray hit any soldier, select the soldier
                     SelectedSoldier = hit.collider.gameObject;
                     EventManager.Broadcast(GameEvent.OnPlaySound, "SoundSelectSoldier");
                 }
@@ -52,7 +60,7 @@ public class CombatManager : MonoBehaviour
             }
         }
 
-        //RIGHT CLICK PROCESS
+        //Right Click Operations
         else if (Input.GetMouseButtonDown(1))
         {
             if (SelectedSoldier == null) return;
@@ -60,27 +68,28 @@ public class CombatManager : MonoBehaviour
             Vector2 worldClickPosition = GetCurrentTilePosition();
             RaycastHit2D hit = Physics2D.Raycast(worldClickPosition, Vector2.zero, Mathf.Infinity, layerMask);
 
+            //The ray we send can hit various objects. Buildings, another soldier or empty space. Operations are performed according to these situations.
             if (hit.collider != null)
             {
                 Soldier selectedSoldier = SelectedSoldier.GetComponent<Soldier>();
 
-                if (hit.collider.GetComponent<Soldier>())
+                if (hit.collider.GetComponent<Soldier>()) //If hit any ENEMY soldier
                 {
                     Soldier targetSoldier = hit.collider.GetComponent<Soldier>();
 
                     if (selectedSoldier._teamTypes == targetSoldier._teamTypes) return;
-
                     EventManager.Broadcast(GameEvent.OnClickToAttack, SelectedSoldier, targetSoldier.gameObject);
                 }
-                else if (hit.collider.GetComponent<Building>())
+
+                else if (hit.collider.GetComponent<Building>())//If hit any ENEMY building
                 {
                     Building targetBuilding = hit.collider.GetComponent<Building>();
 
                     if (selectedSoldier._teamTypes == targetBuilding._teamTypes) return;
-
                     EventManager.Broadcast(GameEvent.OnClickToAttack, SelectedSoldier, targetBuilding.gameObject);
                 }
-                else
+
+                else // Click on an empty space
                 {
                     JustMove();
                 }
@@ -92,6 +101,7 @@ public class CombatManager : MonoBehaviour
         }
     }
 
+    // Get the click tile location and make selected soldier move there
     void JustMove()
     {
         EmptyAreaMovemenPrefab.transform.position = GetCurrentTilePosition();

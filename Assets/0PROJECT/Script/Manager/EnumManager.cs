@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+/// <summary>
+/// Where all enums used in the game are stored
+/// </summary>
 
 public enum PoolType
 {
@@ -15,6 +15,7 @@ public enum SoldierType
     Officer,
     General
 }
+
 public enum TeamTypes
 {
     Blue,
