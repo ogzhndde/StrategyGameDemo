@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4499966143695808456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.057, y: 0.004, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 2051185179
   m_SortingLayer: 6
   m_SortingOrder: 10
-  m_Sprite: {fileID: -294852537, guid: ebb1cfb3cd0a1df499804edfbb8032e6, type: 3}
+  m_Sprite: {fileID: 1434775743, guid: 858ced4d106c56a4a8d784263560add4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamTypes: 0
-  SearchingRadius: 0.25
+  SearchingRadius: 0.3
   TargetDestination: {fileID: 0}
   EnemiesTargetAround: []
   CollidersAround: []
@@ -299,7 +299,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1.5
+  m_LinearDrag: 2.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

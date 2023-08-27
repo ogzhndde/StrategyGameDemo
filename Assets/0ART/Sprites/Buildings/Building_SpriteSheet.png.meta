@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ebb1cfb3cd0a1df499804edfbb8032e6
+guid: 29838ed3e6f015b439b9ef10d47b40fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -20,7 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,13 +140,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: General_Idle_Sheet_0
+      name: Building_Barrack_Main
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7efb2e34a31cf64ea54a2135844686a
+      internalID: -2118511007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building_Barrack_Flag
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,19 +175,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43d00ea33b94ae34d93a13449fb2bd7d
-      internalID: -294852537
+      spriteID: 39cff5667ea190749b4d880087d86355
+      internalID: -50456915
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_Idle_Sheet_1
+      name: Building_House_Main
       rect:
         serializedVersion: 2
-        x: 120
-        y: 0
-        width: 120
+        x: 192
+        y: 128
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -175,19 +196,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90f6ade0cc86b6249baab2093bab2401
-      internalID: 1951022495
+      spriteID: 35e69ad1d12b86a4e9f8ecf4e0438a27
+      internalID: -438954750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_Idle_Sheet_2
+      name: Building_House_Flag
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 120
+        x: 128
+        y: 128
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -196,20 +217,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9edf754443cdcd84ebe5ba6d3c6615d5
-      internalID: 1283639284
+      spriteID: f6065748178b0ac45ad3fd63bf0bc417
+      internalID: 1799607096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_Idle_Sheet_3
+      name: Building_Fence_Main
       rect:
         serializedVersion: 2
-        x: 360
-        y: 0
-        width: 120
-        height: 64
+        x: 0
+        y: 128
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e41e205c3f2aa44a8ce5036d6228992
-      internalID: 1298024793
+      spriteID: 4634a5cf36a65ac4a99fd26ac2edf28a
+      internalID: -1837735567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_Idle_Sheet_4
+      name: Building_Fence_Flag
       rect:
         serializedVersion: 2
-        x: 480
-        y: 0
-        width: 120
-        height: 64
+        x: 0
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,19 +259,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0abdb8279204ee4f860914c6765c865
-      internalID: -39794887
+      spriteID: 5902400c617dad344863e5e301c94353
+      internalID: -1852419261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_Idle_Sheet_5
+      name: Building_PowerPlant_Flag
       rect:
         serializedVersion: 2
-        x: 600
-        y: 0
-        width: 120
+        x: 0
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -259,19 +280,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c7ac526abdc9b74a8cb2d8b438b015e
-      internalID: -2086600734
+      spriteID: a846ffe2bfb92024daea69d327cb116a
+      internalID: -1371761766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: General_Idle_Sheet_6
+      name: Building_PowerPlant_Main
       rect:
         serializedVersion: 2
-        x: 720
-        y: 0
-        width: 120
+        x: 96
+        y: 192
+        width: 96
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -280,71 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a740ecb9de514ac4e99531f8e887e76d
-      internalID: 892527591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: General_Idle_Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 840
-        y: 0
-        width: 120
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2377fee81b8afe0449d4c551cc5cc0e4
-      internalID: -810598493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: General_Idle_Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 120
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dd2dd934902e3d4a8ed3c994c222b18
-      internalID: 1137340536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: General_Idle_Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 0
-        width: 120
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94fb1719c6244a34bb42d5c3d44be845
-      internalID: 742467307
+      spriteID: 6bc311a1e0ee3f243be8f3a36c74cff0
+      internalID: 629718433
       vertices: []
       indices: 
       edges: []
@@ -360,16 +318,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      General_Idle_Sheet_5: -2086600734
-      General_Idle_Sheet_7: -810598493
-      General_Idle_Sheet_6: 892527591
-      General_Idle_Sheet_1: 1951022495
-      General_Idle_Sheet_0: -294852537
-      General_Idle_Sheet_4: -39794887
-      General_Idle_Sheet_3: 1298024793
-      General_Idle_Sheet_9: 742467307
-      General_Idle_Sheet_2: 1283639284
-      General_Idle_Sheet_8: 1137340536
+      Building_House_Flag: -169324544
+      Building_House_Main: -1128788857
+      Building_Fence_Flag: -511023615
+      Building_Fence_Main: -1880787478
+      Building_PowerPlant_Flag: -2141532372
+      Building_Barrack_Main: -132619524
+      Building_PowerPlant_Main: -222938588
+      Building_Barrack_Flag: -1772285654
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

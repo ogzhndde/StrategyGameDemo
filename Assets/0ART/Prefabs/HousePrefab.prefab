@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 824462775
   m_SortingLayer: 7
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 5603f5dba0b4653478622604d00dba22, type: 3}
+  m_Sprite: {fileID: 1799607096, guid: 29838ed3e6f015b439b9ef10d47b40fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 824462775
   m_SortingLayer: 7
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: a889979918b8701429220e24433084a3, type: 3}
+  m_Sprite: {fileID: -438954750, guid: 29838ed3e6f015b439b9ef10d47b40fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -230,7 +230,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5840035, y: 0.54081404}
+  m_Size: {x: 0.496751, y: 0.49953258}
   m_EdgeRadius: 0
 --- !u!50 &3478082715717116420
 Rigidbody2D:
@@ -252,7 +252,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &4177962283489742698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +267,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SPR_MainBuilding: {fileID: 7898345941130696455}
   SPR_TeamFlag: {fileID: 8711643321940669645}
-  combatController: {fileID: 1918403234011987241}
   CLR_BuildingColor: {r: 0, g: 0, b: 0, a: 0}
   _canBuildingPlace: 1
   _isPlaced: 0
@@ -278,8 +277,8 @@ MonoBehaviour:
   _health: 0
   _cellSize: 0
   _buildingType: 0
-  _teamTypes: 0
   _buildingUnits: 
+  _teamTypes: 0
   _unitSpawnPoint: {fileID: 0}
 --- !u!114 &1918403234011987241
 MonoBehaviour:

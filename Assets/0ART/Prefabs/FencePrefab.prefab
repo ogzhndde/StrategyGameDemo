@@ -62,7 +62,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28837758, y: 0.28641534}
+  m_Size: {x: 0.28477997, y: 0.31294888}
   m_EdgeRadius: 0
 --- !u!50 &7595393236144817516
 Rigidbody2D:
@@ -84,7 +84,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &-5756398358443161207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SPR_MainBuilding: {fileID: 1756145474100788368}
   SPR_TeamFlag: {fileID: 6941106005950778775}
-  combatController: {fileID: 3718810977284324709}
   CLR_BuildingColor: {r: 0, g: 0, b: 0, a: 0}
   _canBuildingPlace: 1
   _isPlaced: 0
@@ -110,8 +109,8 @@ MonoBehaviour:
   _health: 0
   _cellSize: 0
   _buildingType: 0
-  _teamTypes: 0
   _buildingUnits: 
+  _teamTypes: 0
   _unitSpawnPoint: {fileID: 0}
 --- !u!114 &3718810977284324709
 MonoBehaviour:
@@ -200,7 +199,7 @@ SpriteRenderer:
   m_SortingLayerID: 824462775
   m_SortingLayer: 7
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 1d61e642233148c4380e4b7e5a82576c, type: 3}
+  m_Sprite: {fileID: -1852419261, guid: 29838ed3e6f015b439b9ef10d47b40fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -284,7 +283,7 @@ SpriteRenderer:
   m_SortingLayerID: 824462775
   m_SortingLayer: 7
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 8c37b79be12148b4eb55eb83d62a6882, type: 3}
+  m_Sprite: {fileID: -1837735567, guid: 29838ed3e6f015b439b9ef10d47b40fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

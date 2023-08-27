@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Barrack
   Description: The place where the soldiers who will change the fate of the war are
     trained!
-  BuildingSprite: {fileID: 952748113, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
-  BuildingInformationSprite: {fileID: -998343426, guid: 2a7909b408f918b47b04369db8ec327b, type: 3}
+  BuildingSprite: {fileID: -1849025613, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
+  BuildingInformationSprite: {fileID: -1899843278, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   Health: 100
   CellSize: 44
   BuildingType: 0

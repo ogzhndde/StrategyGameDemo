@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Fence
   Description: To get past me, you have to tear me apart!
-  BuildingSprite: {fileID: 721072368, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
-  BuildingInformationSprite: {fileID: -838509010, guid: 2a7909b408f918b47b04369db8ec327b, type: 3}
+  BuildingSprite: {fileID: -172141113, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
+  BuildingInformationSprite: {fileID: -417634510, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   Health: 30
   CellSize: 11
   BuildingType: 3

@@ -15,7 +15,7 @@ MonoBehaviour:
   soldierPrefab: {fileID: 6761461194899555482, guid: 9dfe23e2913ebb94682e9a653fad7c50, type: 3}
   soldierUIPrefab: {fileID: 8251390810710163832, guid: e51b5d5dc0d0ddc429b68acd212f22e2, type: 3}
   Name: Rookie
-  soldierSprite: {fileID: 220827510, guid: 2a7909b408f918b47b04369db8ec327b, type: 3}
+  soldierSprite: {fileID: -1993856253, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   health: 10
   damage: 2
   cellSize: 11

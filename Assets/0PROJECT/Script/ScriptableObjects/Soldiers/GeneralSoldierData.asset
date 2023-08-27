@@ -15,7 +15,7 @@ MonoBehaviour:
   soldierPrefab: {fileID: 4499966143775240768, guid: 61150b4614fee9148b0bcc2956994d7e, type: 3}
   soldierUIPrefab: {fileID: 8251390810710163832, guid: e51b5d5dc0d0ddc429b68acd212f22e2, type: 3}
   Name: General
-  soldierSprite: {fileID: 889063849, guid: 2a7909b408f918b47b04369db8ec327b, type: 3}
+  soldierSprite: {fileID: -200684717, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   health: 10
   damage: 10
   cellSize: 11

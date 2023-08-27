@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a7909b408f918b47b04369db8ec327b
+guid: 858ced4d106c56a4a8d784263560add4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,139 +140,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: InfoUI_Rookie
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 260
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb94beca05ebcff47a1f56c4282995ae
-      internalID: 220827510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_Officer
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 260
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76fb4e23f49df214f8f4b507573f120e
-      internalID: 1501530394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_General
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 260
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa2d5f8a571d67b41b0ba21cac829380
-      internalID: 889063849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_Barrack
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 130
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6a5cbeb50620184f8ce3d88390e5cc2
-      internalID: -998343426
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_PowerPlants
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 130
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4a240394c9ca0c4a9f59d13e7b907a7
-      internalID: 655275337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_House
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 130
-        width: 130
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96bfba29407f6904f8bc6529f8b31388
-      internalID: 312790245
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InfoUI_Fence
+      name: General_Idle_Sheet - Copy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 130
-        height: 130
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,8 +154,197 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 985714deced3cf04a94c3076df8f0771
-      internalID: -838509010
+      spriteID: 029d30d68b9636846a139e283800f7b4
+      internalID: -2069648763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b70cf3b98995ba44b77d053ca42a986
+      internalID: 639959135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9014033c12249b479d12596ebff6f8b
+      internalID: -1657417915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e2f1c3ca97aea4897be51d26246fbc
+      internalID: -746703206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9561ec5079914c24ebce6149b7f2fa5b
+      internalID: 1434775743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f40fd1758e3154bb46893a82ebd9d8
+      internalID: 966801609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ec6bd0db609204a9c3f9f743fbe606
+      internalID: 272670706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de371399044318b47aae0e23d0980b87
+      internalID: -2012773401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ccfa3834dd7574497ae41dbccfe01f
+      internalID: 280889441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_Idle_Sheet - Copy_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d707803629ace645969936ecb0dcfb5
+      internalID: -1661517421
       vertices: []
       indices: 
       edges: []
@@ -297,13 +360,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      InfoUI_Rookie: 220827510
-      InfoUI_Fence: -838509010
-      InfoUI_PowerPlants: 655275337
-      InfoUI_Barrack: -998343426
-      InfoUI_Officer: 1501530394
-      InfoUI_House: 312790245
-      InfoUI_General: 889063849
+      General_Idle_Sheet - Copy_7: -2012773401
+      General_Idle_Sheet - Copy_1: 639959135
+      General_Idle_Sheet - Copy_5: 966801609
+      General_Idle_Sheet - Copy_8: 280889441
+      General_Idle_Sheet - Copy_9: -1661517421
+      General_Idle_Sheet - Copy_3: -746703206
+      General_Idle_Sheet - Copy_6: 272670706
+      General_Idle_Sheet - Copy_2: -1657417915
+      General_Idle_Sheet - Copy_4: 1434775743
+      General_Idle_Sheet - Copy_0: -2069648763
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

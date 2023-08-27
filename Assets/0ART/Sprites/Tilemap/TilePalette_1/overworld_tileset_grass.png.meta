@@ -20,7 +20,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -4632,13 +4632,13 @@ TextureImporter:
       overworld_tileset_grass_141: -666457623
       overworld_tileset_grass_113: -506471989
       overworld_tileset_grass_40: 952702349
-      overworld_tileset_grass_45: -1428968523
       overworld_tileset_grass_87: 1155314180
+      overworld_tileset_grass_45: -1428968523
       overworld_tileset_grass_43: 499590031
-      overworld_tileset_grass_117: -889025940
       overworld_tileset_grass_170: -765227279
       overworld_tileset_grass_18: 1887349559
       overworld_tileset_grass_164: -1462098262
+      overworld_tileset_grass_117: -889025940
       overworld_tileset_grass_62: -1925618612
       overworld_tileset_grass_187: 345334869
       overworld_tileset_grass_15: -1515900733
@@ -4700,12 +4700,12 @@ TextureImporter:
       overworld_tileset_grass_26: -384310290
       overworld_tileset_grass_202: 1325732789
       overworld_tileset_grass_29: 292133832
-      overworld_tileset_grass_33: 557249182
       overworld_tileset_grass_159: -537718949
+      overworld_tileset_grass_33: 557249182
       overworld_tileset_grass_30: 1659009700
       overworld_tileset_grass_98: 180360677
-      overworld_tileset_grass_80: 1430040159
       overworld_tileset_grass_136: -2020225847
+      overworld_tileset_grass_80: 1430040159
       overworld_tileset_grass_169: -474329975
       overworld_tileset_grass_116: 2014562089
       overworld_tileset_grass_21: 1857662980

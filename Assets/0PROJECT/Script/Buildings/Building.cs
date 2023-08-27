@@ -159,6 +159,17 @@ public class Building : MonoBehaviour, IBuilding
         damageController.SetHealthBarValues(_health, CLR_BuildingColor);
     }
 
+    private void BuildingVariablesCheck(bool isPlaced, string sortingLayer, bool isTrigger, Color color, float opacity)
+    {
+        _isPlaced = isPlaced;
+        SPR_MainBuilding.sortingLayerName = sortingLayer;
+        SPR_TeamFlag.sortingLayerName = sortingLayer;
+
+        coll.isTrigger = isTrigger;
+        CheckBuildingSprites(color, opacity);
+    }
+
+
 
 
     //##########################        EVENTS      ###################################
@@ -170,6 +181,14 @@ public class Building : MonoBehaviour, IBuilding
     void OnDisable()
     {
         EventManager.RemoveHandler(GameEvent.OnPlaceBuilding, OnPlaceBuilding);
+
+        //WHEN DESTROY THE BUILDING AND SEND POOL, RESET THE VALUES
+        BuildingVariablesCheck(
+                isPlaced: false,
+                sortingLayer: "Units",
+                isTrigger: true,
+                color: Color.white,
+                opacity: 1f);
     }
 
     private void OnPlaceBuilding(object value)
@@ -178,12 +197,12 @@ public class Building : MonoBehaviour, IBuilding
 
         if (selectedBuilding == gameObject)
         {
-            _isPlaced = true;
-            SPR_MainBuilding.sortingLayerName = "PlacedUnits";
-            SPR_TeamFlag.sortingLayerName = "PlacedUnits";
-
-            CheckBuildingSprites(Color.white, 1f);
-
+            BuildingVariablesCheck(
+                isPlaced: true,
+                sortingLayer: "PlacedUnits",
+                isTrigger: false,
+                color: Color.white,
+                opacity: 1f);
         }
     }
 
