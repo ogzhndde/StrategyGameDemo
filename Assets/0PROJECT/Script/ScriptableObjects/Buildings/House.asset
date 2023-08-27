@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: House
   m_EditorClassIdentifier: 
   Name: House
-  Description: Home Sweet Home...
+  Description: Home sweet home...
   BuildingSprite: {fileID: 636304524, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   BuildingInformationSprite: {fileID: 552197807, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   Health: 60

@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Barrack
   m_EditorClassIdentifier: 
   Name: Barrack
-  Description: The place where the soldiers who will change the fate of the war are
-    trained!
+  Description: Where patriotic soldiers lived and trained.
   BuildingSprite: {fileID: -1849025613, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   BuildingInformationSprite: {fileID: -1899843278, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   Health: 100

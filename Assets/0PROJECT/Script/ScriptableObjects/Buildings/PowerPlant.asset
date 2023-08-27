@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PowerPlant
   m_EditorClassIdentifier: 
   Name: PowerPlant
-  Description: The only place that generates the energy of the entire army...
+  Description: The field where all the provisions of the village are produced...
   BuildingSprite: {fileID: 662294296, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   BuildingInformationSprite: {fileID: 233839801, guid: 6bbf25edfa41452499448cb77f1a07da, type: 3}
   Health: 50
